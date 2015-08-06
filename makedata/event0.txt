@@ -1,0 +1,121 @@
+Sengzhac
+LOG45                 NOTHING                 WE HAVE NOTHING MORE TO SAY TO YOU...
+LOG34                 NOTHING                 still WE DO not think you Are worthy... do more for us.
+log24                 doom gate(log45)        we will be joining your silly kendar. EXPLAIN WHY THE TEMPLE IS SIGNIFIGANT.
+log0                  nothing                 YOU RETURN? DIE, LITTLE PIGGY!
+
+
+
+
+
+
+D'phak
+LOG46                 NOTHING                 FINAL HELLO...
+log18                 thermaturge(LOG46)      join the kendar
+LOG43                 NOTHING                 AHHH... YOU HAVE RETURNED
+log30                 NOTHING                 d'pahk suggest giving yiller genes to the guild
+LOG34                 NOTHING                 YOU HAVE NO MERIT... WE WILL NOT JOIN (THE ERMIGEN HAVE NOT JOINED)
+log1                  nothing                 ahhh... you have returned.
+
+
+
+
+Aard
+LOG45                 LOG31                   HELLO SIGNIFYING THAT THEY ARE NOW MEMBERS...
+LOG27(ERMIGEN DEATH)  NOTHING                 YOU MUST HURRY AND GATHER TOGETHER THE KENDAR
+
+
+
+
+
+
+
+
+Ermigen
+LOG34                 NOTHING                 HELLO AGAIN FELLOW MEMBER.
+LOG32                 LOG34                   WE WILL JOIN(INCLUDE THEM TELLING YOU ABOUT THE TROJAN GATE.)
+LOG33                 NOTHING                 HELLO AGAIN.
+TORQUE STANCHION      LOG33                   THANKS.
+
+
+
+
+
+
+Titarian
+LOG47                 NOTHING                 LAST HELLO...
+LOG36                 LOG47                   WE JOIN THE KENDAR
+LOG35                 NOTHING                 THEY MENTION THE DERELICT (MAYBE THE LOCATION?)
+LOG4                  LOG35                   WE FORESEE A BRIGHT SPOT
+LOG25                 NOTHING                 PIRATE IS DEAD RESPONSE
+LOG37                 NOTHING                 WE TELL YOU WHERE THE PIRATE IS
+
+
+
+
+Quai Pa'loi
+SILLY PART 1          GOOD PART 1             THANKS 1
+SILLY PART 2          GOOD PART 2             THANKS 2
+SILLY PART 3          GOOD PART 3             THANKS 3
+LOG 48                NOTHING                 FINAL HELLO
+GOOLAS                MULTI-IMAGER(LOG48)     END WAR JOIN KENDAR?
+LOG38                 NOTHING                 WE'RE HAVING A WAR ALREADY...SHEESH. GO AWAY.
+LOG13                 LOG38(QUAI WAR)         QUAI WAR...
+LOG30(ERMGN DEAD)     NOTHING                 TENSION MOUNTS... THE PLOT THICKENS
+LOG21                 NOTHING                 STRANGE THINGS ARE AFOOT AT THE CIRCLE K
+LOG 5                 NOTHING                 HELLO AGAIN
+Scavengers
+LOG30                 NOTHING                 WE ARE NEW IMPROVED VERY EVIL SCAVENGERS... WE WILL DESTROY YU ALL (CACKLES)
+LOG21                 NOTHING                 A BIT MORE AGRESSIVE
+LOG6                  NOTHING                 THE OTHER HELLO...
+
+
+
+
+
+
+
+Icon
+GLYPTIC SCYTHE        NOTHING                 WE DECYPHERED THE WORD CUTTER... AND THE MOCH STAND FOR...
+LOG21                 NOTHING                 GO FORTH AND SPEAK FOR US THAT THE KENDAR MIGHT BE AGAIN!
+
+
+
+
+
+
+
+
+The Guild
+IF LOG39 EXISTS THEN SKIP NEXT IF LOG SCAN
+LOG38                 LOG39                   THE MOCH HAVE THE GOOLAS
+LOG44                 NOTHING                 FINAL HELLO (HERE'S HOW YOU KILL THE SCAVENGERS)
+LOG25                 LOG44                   WE JOIN YOU NOW... THIS KENDAR OF YOURS.
+LOG43                 LOG41                   WE KNOW WHAT WE WANT YOU TO DO... KILL DERRAAK
+LOG49                 LOG43                   NOW... BEFORE WE JOIN, WE NEED TO YOU NO KILL DERRAAK.
+LOG8                  NOTHING                 HELLO... I BELIEVE WE'VE MET.
+
+
+
+Phaedor Moch
+LOG48(QUAI WAR ENDS)  NOTHING                 FINAL HELLO
+LOG39             GOOLAS(IF DON'T HAVE THEM)  AND WE HAVE THE GOOLAS!!
+LOG40                 NOTHING                 OTHER HELLO
+NOTHING               GLYPTIC SCYTHE(LOG40)   HAPPY? I THOUGHT SO.(TAKE IT TO THE ICON)
+
+
+
+
+
+
+Void Dwellers
+LOG44                 NOTHING                 FINAL HELLO
+LOG19                 LOG44                   VOID DWELLERS TELL YOU ABOUT GOD EYE... IT'S SIGNIFIGANCE.
+LOG9                  NOTHING                 OTHER HELLO
+
+
+
+
+
+
+

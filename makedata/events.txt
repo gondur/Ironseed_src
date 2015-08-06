@@ -1,0 +1,175 @@
+events
+
+SPE==Set Pending Event
+
+1-10    these events are unset after each conversation
+
+200-300   main story events
+
+201     brought psycometrist back online, and activated sector codex
+202     found satellite from human ship
+203     find phaedor moch ship damaged and fighting
+204     shoot down phaedor moch
+205     repair phaedor moch ship <receive strange panel from P6>
+206     meet hallifax manuever
+207     scavengers meet you
+208     teach scavengers pain
+209     get coolents from QP
+210     get solonoids from QP
+211     get hull increasing artifact from QP
+212     get Muriel from QP (SPE for QP war)
+213     Quai Pa'loi go to war
+214     offer help to q'ooul
+215     guild tells you the moch have the goo launchers
+216     fix muriel's stasis field
+217     wake muriel
+218     muriel tells you where her mother is
+219     ermigen tell you about trojan gate
+220     use trojan gate
+221     confront guild about destroyed planet
+222     learn name of ylinthelixymn (yillers)
+223     scavs capture muriel
+224     destroy scav guarding base
+225     aria tells you muriel is android
+226     aria gives you a scavenger brain
+227     rescue muriel and get info on yillers (SPE muriel talk with you)
+228     muriel encodes herself
+229     get distress signal from aard
+230     help aard, aard undisquise themselves (SPE science talk...set up
+        morph-talk program
+232     titerian mention bright spot
+233     titerian tell you about race that worships titerian
+234     meet the race of titerian worshipers
+235     find abandoned world of monks
+236     tell worshipers that monks moved...they tell you about shunt world
+237     tell worshipers answer to question after consulting monks
+238     dpank suggest giving yiller genes to guild
+239     give genes to guild..get many cool things 
+240     titerian tell about derelict
+241     find derelict
+242     get thermoplast tech
+244     system with bright spot goes nova (and vision occurs in blackout)
+        (SPE for void dwellers to tell you about god's eye) <SPE for titerian
+        to tell about derelict)
+246     void dwellers tell you about eye (SPE for vision "seek sight in iron")
+248     shunt ship crash
+249     get shunt drive (SEP for crew comments)
+250     first try to install shunt
+251     second try to install shunt
+252     third try to install shunt
+253     fourth try to install shunt (SEP for more crew comments) (SEP for
+        guild to tell you how to destroy scavs using drive)
+254     guild tell you about shunt drive and starhammers (SEP for MalZatoir
+        to be destroyed)
+255     MalZatoir destroyed (SEP for icon to contact you)
+256     icon bouy contacts you
+257     icon decipher panel from moch ship
+258     moch trade you guns for worthless junk
+259     icon tell you about hallifax
+260     activate sheild device at hallifax
+261     monks ask you to bring them mobius device (SEP for temple vision)
+262     have vision and get temple coords
+263     give guns to q'ooul war over
+264     rewarded for winning war with multi-imager
+265     find temple (SEP for crew to tell you to use detonator)
+266     blast into temple (SEP for void dwellers to tell you location of
+        god's eye) (SEP for derraak to steal shunt drive)
+267     derraak steals shunt drive
+268     guild tell you ask titerians about derraak
+270     guild tell you derraak's favorite system to hide in
+271     titerians tell you what they know about him (SPE for crew to suggest
+        how to catch him)
+272     crew tell you how to catch him (SPE for derraak to attack in his
+        favorite system)
+273     plant homing device on derraak
+274     find derraak's base
+275     destroy derraak's ship
+276     retrieve shunt drive and other things
+277     repair drive (SPE for crew to tell you you don't have enough energy
+        to activate the drive.) (SPE for someone to tell you that the
+        ermigen are destroyed and scavs are gathering at a planet with
+        a trojan gate)
+278     search ermigen homeworld and find records
+279     send thermal probot to sun and get anchor (SPE for dpahk to ask you
+        about probot for them)
+280     give probot to dpahk and get thermaturge
+281     talk to sengzhac and get doom gate
+282     build mobius device
+283     give device to monks and lower number of sengzhac at final battle
+        (won't let you go to god's eye until scavs are destroyed)
+284     your ship is nearly destroyed by scavs...they learn hope...
+285     launch shunt into gate
+286     enter gate after shunt
+287     defeat the sengzhac
+288     activate device (SPE for vision in 2 minutes)
+289     place channeler in device
+290     activate device and win
+291     you are told that the ermigen were destroyed on purpose
+292     aria found killed by scavengers
+
+COVO SETS FOR CHRISP
+600-700
+
+600    Dpahk tell you about QP war
+601    first trade with void dwellers
+602    void dwellers tell coords of god's eye
+603    confront ermigen with fear
+604    give scavs info
+605    first talk to murial
+606    first talk to aria
+607    told aria about muriel
+608    aria told you about brain
+
+OTHER EVENTS 20000-20100
+20000  exit conversation
+20001  trade
+20002  exit into battle
+20003  increase anger 1
+20004  increase anger 5
+20005  decrease anger 1
+20006  decrease anger 5
+20007  yes/no question   next entry is yes answer  second entry is no answer
+
+OTHER EVENTS CHRISP
+ 20100-20200
+
+20100   if player has thrermal probot, take it and give them a thermaturge
+        then set event 280 and exit conversation
+20101   if player has coolant and radioactive, take it and give them
+        strange panel, then set event 205
+20102   set event 246 and set up for vision from the **** about seek sight
+        in iron when the ship engages its engines the next time
+20103   if player has a data board, take it and give him 10 industrial chemicals...set
+        event 209
+20104   if player has a data board, take it and give him 20 solonoids...set
+        event 210
+20105   if player has a data board, take it and give him artifact to increase
+        hull points...set event 211
+20106   if player has a data board, take it and give him muriel...set
+        event 212
+20107   give player the multi-imager...they cannot drop this item.  also set
+        event 264
+20108   take yiller genetic material from player and give the player some neat
+        stuff.  set event 239 and exit conversation.(after giving player time
+        to read the text of course)
+20109   if 230 (morphtalk) is not set then
+               display message #54 and exit to battle
+        if 230 is set then
+           if 266 (been to temple) is not set, then
+               display message #56 and exit con peacefully
+           else...if 266 is set then
+               if 264 (imager) is not set then display mess #55 and exit
+                  peacefully
+               if 264 is set then display message #56 (56 HAS MULTIPLE LINES)
+20110   give player a doom gate and set 281
+20111   if player has worthless junk, then take it and give goolas and set
+        258, and print "P6> HERE YOU ARE."...if no junk, then just print
+        "YOU HAVE NO JUNK...SORRY."
+        (NOTE:  goolas cannot be dropped.)
+20112   if player has stratamount, take it and set event 230 and print
+        "Thank you, we will not forget this."
+        if player doesn't have a stratamount, then print
+        "Then please find one and bring it to us."
+20113   set event 208 and exit con...the scavenger ship should leave quickly
+        before any communication or battle attempts can be made.
+20114   give player scavenger brain and set event 226 (note: can't drop brain)

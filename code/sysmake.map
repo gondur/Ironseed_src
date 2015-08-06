@@ -1,0 +1,121 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00392H 00393H displaysystems     CODE
+ 003A0H 0096DH 005CEH Crt                CODE
+ 00970H 047ABH 03E3CH System             CODE
+ 047B0H 064FFH 01D50H DATA               DATA
+ 06500H 0A4FFH 04000H STACK              STACK
+ 0A500H 0A500H 00000H HEAP               HEAP
+
+  Address         Publics by Value
+
+ 0000:0034       display
+ 0000:02A2       @
+ 003A:000D       @
+ 003A:0152       TextMode
+ 003A:0167       Window
+ 003A:01A7       ClrScr
+ 003A:01C1       ClrEol
+ 003A:01D5       InsLine
+ 003A:01DA       DelLine
+ 003A:01FA       GotoXY
+ 003A:0226       WhereX
+ 003A:0232       WhereY
+ 003A:023E       TextColor
+ 003A:0258       TextBackground
+ 003A:0270       LowVideo
+ 003A:0276       HighVideo
+ 003A:027C       NormVideo
+ 003A:0283       Sound
+ 003A:02B0       NoSound
+ 003A:02B7       KeyPressed
+ 003A:02C9       ReadKey
+ 003A:02EB       AssignCrt
+ 047B:0002       OvrCodeList
+ 047B:0004       OvrHeapSize
+ 047B:0006       OvrDebugPtr
+ 047B:000A       OvrHeapOrg
+ 047B:000C       OvrHeapPtr
+ 047B:000E       OvrHeapEnd
+ 047B:0010       OvrLoadList
+ 047B:0012       OvrDosHandle
+ 047B:0014       OvrEmsHandle
+ 047B:0016       HeapOrg
+ 047B:001A       HeapPtr
+ 047B:001E       HeapEnd
+ 047B:0022       FreeList
+ 047B:0026       FreeZero
+ 047B:002A       HeapError
+ 047B:002E       ExitProc
+ 047B:0032       ExitCode
+ 047B:0034       ErrorAddr
+ 047B:0038       PrefixSeg
+ 047B:003A       StackLimit
+ 047B:003C       InOutRes
+ 047B:003E       RandSeed
+ 047B:0042       SelectorInc
+ 047B:0044       Seg0040
+ 047B:0046       SegA000
+ 047B:0048       SegB000
+ 047B:004A       SegB800
+ 047B:004C       Test8086
+ 047B:004D       Test8087
+ 047B:004E       FileMode
+ 047B:0052       a
+ 047B:0054       i
+ 047B:0056       j
+ 047B:0058       index
+ 047B:005A       f
+ 047B:00DA       ft
+ 047B:01DA       t
+ 047B:0E8C       f2
+ 047B:0F0C       s
+ 047B:1AC4       tempt
+ 047B:1AD2       temps
+ 047B:1ADE       CheckBreak
+ 047B:1ADF       CheckEOF
+ 047B:1AE0       DirectVideo
+ 047B:1AE1       CheckSnow
+ 047B:1AE2       LastMode
+ 047B:1AE4       TextAttr
+ 047B:1AE6       WindMin
+ 047B:1AE8       WindMax
+ 047B:1AF0       Input
+ 047B:1BF0       Output
+ 047B:1CF0       SaveInt00
+ 047B:1CF4       SaveInt02
+ 047B:1CF8       SaveInt1B
+ 047B:1CFC       SaveInt21
+ 047B:1D00       SaveInt23
+ 047B:1D04       SaveInt24
+ 047B:1D08       SaveInt34
+ 047B:1D0C       SaveInt35
+ 047B:1D10       SaveInt36
+ 047B:1D14       SaveInt37
+ 047B:1D18       SaveInt38
+ 047B:1D1C       SaveInt39
+ 047B:1D20       SaveInt3A
+ 047B:1D24       SaveInt3B
+ 047B:1D28       SaveInt3C
+ 047B:1D2C       SaveInt3D
+ 047B:1D30       SaveInt3E
+ 047B:1D34       SaveInt3F
+ 047B:1D38       SaveInt75
+
+Line numbers for displaysystems(MAKEDATA\SYSMAKE.PAS) segment displaysystems
+
+    23 0000:0034    24 0000:0037    25 0000:0046    26 0000:0052
+    27 0000:0061    28 0000:006D    29 0000:007C    30 0000:0086
+    32 0000:0092    33 0000:00AA    34 0000:00C2    36 0000:00CA
+    38 0000:00D6    39 0000:00DC    41 0000:0118    42 0000:012F
+    43 0000:014C    45 0000:0163    46 0000:017A    47 0000:0197
+    49 0000:01AE    51 0000:01B9    52 0000:01C5    54 0000:025E
+    55 0000:0268    56 0000:0272    57 0000:027C    60 0000:02A2
+    61 0000:02B4    62 0000:02B7    63 0000:02BA    64 0000:02C9
+    65 0000:02D3    66 0000:02E2    67 0000:02EE    68 0000:02F5
+    70 0000:0301    71 0000:0317    72 0000:031E    73 0000:0342
+    74 0000:0347    75 0000:0359    76 0000:036F    77 0000:0377
+    78 0000:0381    79 0000:038B
+
+Program entry point at 0000:02A2

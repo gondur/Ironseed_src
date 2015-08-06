@@ -1,0 +1,1019 @@
+unit utils2;
+
+{***************************
+   Overlayable Utilites for IronSeed
+
+   Channel 7
+   Destiny: Virtual
+
+
+   Copyright 1994
+
+***************************}
+
+{$O+}
+
+interface
+
+procedure adjustplanets(t: integer);
+procedure adjustsystem;
+procedure redoscreen(x,y,z: integer);
+procedure createplanet(xc,yc: integer);
+procedure readyplanet;
+procedure createstar(c,xc,yc: integer);
+procedure readystar;
+procedure removedata;
+procedure dothatartifactthing(n: integer);
+procedure reloadbackground;
+procedure makeastoroidfield;
+procedure makecloud;
+procedure drawastoroid;
+procedure getname(n: integer);
+procedure addgunnode;
+
+implementation
+
+uses crt, graph, data, journey, gmouse, usecode, display, saveload, comm,
+ utils, weird;
+
+type
+ scandatatype= array[0..11] of byte;
+ scantype= array[0..16] of scandatatype;
+var
+ a,b,j,i,index,curplanicons: integer;
+
+procedure reloadbackground;
+var temp: pscreentype;
+begin
+ new(temp);
+ backgrx:=random(320);
+ backgry:=random(200);
+ loadscreen('data\main',temp);
+ loadscreen('data\cloud',backgr);
+ for j:=0 to 319 do
+  begin
+   x:=j+backgrx;
+   if x>319 then x:=x-320;
+   for i:=0 to 199 do
+    begin
+     y:=i+backgry;
+     if y>199 then y:=y-200;
+     if temp^[i,j]=255 then screen[i,j]:=backgr^[y,x];
+    end;
+  end;
+ dispose(temp);
+end;
+
+procedure addstuff(n: integer);
+var scanfile: file of scantype;
+    temp: ^scantype;
+    a,total,b,c,t: integer;
+    tempcreate: ^creationtype;
+    creafile: file of creationtype;
+begin
+ new(temp);
+ assign(scanfile,'data\scan.dta');
+ reset(scanfile);
+ if ioresult<>0 then errorhandler('scan.dta',1);
+ read(scanfile,temp^);
+ if ioresult<>0 then errorhandler('scan.dta',5);
+ close(scanfile);
+ if tempplan^[n].bots=1 then
+  begin
+   for c:=1 to 7 do
+    if tempplan^[n].cache[c]=0 then
+     begin
+      total:=0;
+      for a:=0 to 16 do inc(total,temp^[a,tempplan^[n].state]);
+      b:=random(total);
+      a:=0;
+      repeat
+       dec(b,temp^[a,tempplan^[n].state]);
+       inc(a);
+      until (b<=0) or (a=17);
+      a:=(a-1)*10+5000;
+      tempplan^[n].cache[c]:=a;
+     end;
+  end
+ else if tempplan^[n].bots=2 then
+  begin
+   new(tempcreate);
+   assign(creafile,'data\creation.dta');
+   reset(creafile);
+   if ioresult<>0 then errorhandler('creation.dta',1);
+   total:=0;
+   for j:=1 to totalcreation do
+    begin
+     read(creafile,tempcreate^);
+     if ioresult<>0 then errorhandler('creation.dta',5);
+     a:=0;
+     for i:=1 to 3 do
+      if (tempcreate^.parts[i]>5000) and (temp^[tempcreate^.parts[i]-5000,tempplan^[n].state]>0) then inc(a);
+     if a=3 then inc(total);
+    end;
+   for c:=1 to 7 do
+    if tempplan^[n].cache[c]=0 then
+     begin
+      t:=random(total)+1;
+      reset(creafile);
+      if ioresult<>0 then errorhandler('creation.dta',1);
+      j:=1;
+      repeat
+       inc(j);
+       read(creafile,tempcreate^);
+       if ioresult<>0 then errorhandler('creation.dta',5);
+       a:=0;
+       for i:=1 to 3 do
+        if (tempcreate^.parts[i]>5000) and (temp^[tempcreate^.parts[i]-5000,tempplan^[n].state]>0) then inc(a);
+       if a=3 then dec(t);
+      until (t<1) or (j=totalcreation);
+      tempplan^[n].cache[c]:=tempcreate^.index;
+     end;
+   close(creafile);
+   dispose(tempcreate);
+  end;
+ dispose(temp);
+end;
+
+procedure adjustplanets(t: integer);
+var j,olds: integer;
+begin
+ randomize;
+ for j:=1 to 1000 do
+  begin
+   if tempplan^[j].bots>0 then addstuff(j);
+   with tempplan^[j] do
+    begin
+     age:=age+t;
+     olds:=state;
+     case state of
+      0:case mode of
+         1,2:if age>=1000000000 then
+            begin
+             age:=0;
+             inc(mode);
+            end;
+         3: if age>=500000000 then
+             begin
+              age:=0;
+              mode:=1;
+              state:=1;
+             end;
+        end;
+      1:case mode of
+         1: if age>=500000000 then
+             begin
+              age:=0;
+              mode:=2;
+             end;
+         2: if age>=400000000 then
+             begin
+              age:=0;
+              mode:=3;
+             end;
+         3: if age>=300000000 then
+             begin
+              age:=0;
+              mode:=1;
+              state:=2;
+             end;
+       end;
+      2:case mode of
+         1: if age>=200000000 then
+             begin
+              age:=0;
+              mode:=2;
+             end;
+         2: if age>=150000000 then
+             begin
+              age:=0;
+              mode:=3;
+             end;
+         3: begin
+             if age>=150000000 then
+              begin
+               age:=0;
+               mode:=1;
+               state:=3;
+              end;
+             if random(40)=0 then
+              begin
+               age:=0;
+               state:=5;
+               mode:=2;
+              end;
+            end;
+       end;
+      3:case mode of
+         1: begin
+             if age>=15000000 then
+              begin
+               age:=0;
+               mode:=2;
+              end;
+             if random(40)=0 then
+              begin
+               age:=0;
+               state:=5;
+               mode:=2;
+              end;
+            end;
+         2: if age>=10000 then
+             begin
+              age:=0;
+              mode:=3;
+             end;
+         3: if age>=8000 then
+             begin
+              age:=0;
+              mode:=1;
+              state:=4;
+             end;
+       end;
+      4:case mode of
+         1: if age>=4000 then
+             begin
+              age:=0;
+              mode:=2;
+             end;
+         2: begin
+             if age>=2000 then
+              begin
+               age:=0;
+               mode:=3;
+              end;
+             if random(40)=0 then
+              begin
+               if random(2)=0 then mode:=1
+                else mode:=2;
+               state:=6;
+               age:=0;
+              end;
+            end;
+         3: begin
+             if age>=4000 then
+              begin
+               age:=0;
+               mode:=1;
+               state:=5;
+              end;
+             if random(40)=0 then
+              begin
+               if random(2)=0 then mode:=1
+                else mode:=2;
+               state:=6;
+               age:=0;
+              end;
+            end;
+       end;
+      5:case mode of
+         1: if age>=3000 then
+             begin
+              age:=0;
+              mode:=2;
+             end;
+         2: begin
+             if age>=8000 then
+              begin
+               age:=0;
+               mode:=3;
+              end;
+             if random(40)=0 then
+              begin
+               age:=0;
+               state:=2;
+               mode:=3;
+              end;
+            end;
+         3:;
+       end;
+      6:if (mode=1) and (age>=100000) then
+         begin
+          age:=0;
+          mode:=2;
+         end;
+     end;
+    if (olds<>state) then
+     begin
+      fillchar(cache,sizeof(cache),0);
+      bots:=0;
+      notes:=0;
+     end;
+    if tempplan^[j].bots>0 then addstuff(j);
+    end;
+  end;
+end;
+
+procedure getname(n: integer);
+type nametype= string[12];
+var str1: nametype;
+    f: file of nametype;
+begin
+ assign(f,'data\sysname.dta');
+ reset(f);
+ if ioresult<>0 then errorhandler('data\sysname.txt',1);
+ seek(f,n-1);
+ if ioresult<>0 then errorhandler('data\sysname.txt',6);
+ read(f,str1);
+ if ioresult<>0 then errorhandler('data\sysname.txt',6);
+ systems[n].name:=str1;
+ close(f);
+end;
+
+procedure adjustsystem;
+begin
+ if systems[tempplan^[curplan].system].visits=0 then
+  getname(tempplan^[curplan].system);
+ inc(systems[tempplan^[curplan].system].visits);
+ systems[tempplan^[curplan].system].datey:=ship.stardate[3];
+ systems[tempplan^[curplan].system].datem:=ship.stardate[1];
+ if systems[tempplan^[curplan].system].visits<255 then inc(tempplan^[j].visits);
+ tempplan^[j].datey:=ship.stardate[3];
+ tempplan^[j].datem:=ship.stardate[1];
+end;
+
+procedure redoscreen(x,y,z: integer);
+var dist: real;
+    index,time: integer;
+    str1: string[4];
+begin
+ dist:=sqr((x-ship.posx)/10);
+ dist:=dist + sqr((y-ship.posy)/10);
+ dist:=dist + sqr((z-ship.posz)/10);
+ dist:=sqrt(dist);
+ if (random(85)+15)<ship.damages[4] then
+  begin
+   tcolor:=94;
+   println;
+   print('NAVIGATION: Ship off course!');
+   ship.posx:=x-3+random(7);
+   ship.posy:=y-3+random(7);
+   ship.posz:=z-3+random(7);
+  end
+ else
+  begin
+   ship.posx:=x;
+   ship.posy:=y;
+   ship.posz:=z;
+  end;
+ targetready:=false;
+ ship.battery:=32000;
+ checkstats;
+ showplanet:=false;
+ for j:=1 to nearbymax do nearby[j].index:=0;
+ i:=0;
+ for j:=1 to 250 do
+  begin
+   x:=systems[j].x-ship.posx;
+   y:=systems[j].y-ship.posy;
+   z:=systems[j].z-ship.posz;
+   if (abs(x)<400) and (abs(y)<400)
+    and (abs(z)<400) then
+     begin
+      inc(i);
+      if i>nearbymax then errorhandler('NEARBY STRUCTURE OVERFLOW #1.',6);
+      nearby[i].index:=j;
+      nearby[i].x:=x/10;
+      nearby[i].y:=y/10;
+      nearby[i].z:=z/10;
+      systems[j].notes:=systems[j].notes or 1;
+     end;
+  end;
+ move(nearby,nearbybackup,sizeof(nearbyarraytype));
+ mousehide;
+ compressfile(tempdir+'\current',@screen);
+ fillchar(screen,64000,0);
+ tcolor:=47;
+ bkcolor:=0;
+ time:=round(dist*2)+1;
+ printxy(42,187,'Acceleration to near light speed...');
+ mouseshow;
+ for j:=0 to round(dist*2) do
+  begin
+   addlotstime(random(4000)+4000);
+   dec(time);
+   str(time,str1);
+   if length(str1)<4 then for i:=length(str1)+1 to 4 do str1[i]:=#20;
+   str1[0]:=#4;
+   bkcolor:=0;
+   printxy(222,187,str1);
+  end;
+ bkcolor:=3;
+ tcolor:=31;
+ fading;
+ mousehide;
+ loadscreen(tempdir+'\current',@screen);
+ showtime;
+ index:=0;
+ for j:=1 to nearbymax do
+  if (systems[nearby[j].index].x=ship.posx) and
+     (systems[nearby[j].index].y=ship.posy) and
+     (systems[nearby[j].index].z=ship.posz) then
+    begin
+     index:=j;
+     j:=nearbymax;
+    end;
+ if index<>0 then
+  begin
+   ship.stardate[3]:=ship.stardate[3]+round(dist);
+   j:=findfirstplanet(nearby[index].index);
+   ship.orbiting:=0;
+   curplan:=j;
+   showtime;
+   adjustsystem;
+   adjustplanets(round(dist));
+   readystar;
+  end
+ else
+  begin
+   curplan:=0;
+   ship.orbiting:=0;
+   reloadbackground;
+   fadein;
+  end;
+ mouseshow;
+ if ship.options[8]=1 then savegamedata(0,31);
+ target:=0;
+ for j:=1 to random(4)+1 do
+  begin
+   i:=random(7)+1;
+   if ship.damages[i]<90 then inc(ship.damages[i]);
+  end;
+ if index<>0 then
+  begin
+   for j:=0 to maxeventsystems do
+    if eventsystems[j]=nearby[index].index then event(eventstorun[j]);
+  end;
+end;
+
+procedure createplanet(xc,yc: integer);
+var x1,y1: integer;
+    a: longint;
+    str1: string[3];
+begin
+ x1:=xc;
+ y1:=yc;
+ randseed:=tempplan^[curplan].seed;
+ for a:=1 to 75000 do
+  begin
+   inc(i);
+   x1:=x1-1+random(3);
+   y1:=y1-1+random(3);
+   if x1>240 then x1:=1 else if x1<1 then x1:=240;
+   if y1>120 then y1:=1 else if y1<1 then y1:=120;
+   if landform^[x1,y1]<240 then landform^[x1,y1]:=landform^[x1,y1]+7;
+   if i=1125 then
+    begin
+     inc(index);
+     str((200-index):3,str1);
+     printxy(90,170,str1);
+     i:=0;
+    end;
+  end;
+end;
+
+procedure creategasplanet;
+var x1,y1: integer;
+    a,b,c: integer;
+begin
+ a:=1;
+ c:=112;
+ randseed:=tempplan^[curplan].seed;
+ for j:=1 to 240 do
+   for i:=1 to 120 do
+    begin
+     dec(a);
+     if a<1 then
+      begin
+       a:=random(5)*30;
+       c:=c-1;
+       if c<0 then c:=0+random(4)
+        else if c>255 then c:=255-random(4)
+        else c:=c+random(3);
+      end;
+     landform^[j,i]:=c;
+    end;
+ for a:=2 to 120 do
+  for i:=a to 120 do
+   begin
+    b:=landform^[240,i];
+    for j:=240 downto 2 do
+     landform^[j,i]:=landform^[j-1,i];
+    landform^[1,i]:=b;
+   end;
+ for j:=1 to 240 do
+  for i:=2 to 120 do
+   begin
+    if j=1 then c:=landform^[240,i-1]+landform^[240,i]
+     else c:=landform^[j-1,i-1]+landform^[j-1,i];
+    if j=240 then c:=c+landform^[1,i-1]
+     else c:=c+landform^[j+1,i-1];
+    c:=c+landform^[j,i-1]+landform^[j,i];
+    c:=c div 5;
+    landform^[j,i]:=c;
+   end;
+end;
+
+procedure makeastoroidfield;
+var t3: real;
+begin
+ randseed:=tempplan^[curplan].seed;
+ for b:=0 to 100+random(50) do
+  begin
+   a:=random(6);
+   readweaicon(a+80);
+   x:=random(300)+10;
+   y:=random(70)+25;
+   if random(5)=0 then y:=y-20+random(40);
+   t3:=(random(190)+10)/200;
+   for i:=0 to 19 do
+    for j:=0 to 19 do
+     if tempicon^[i,a+j]<>0 then backgr^[y+round(i*t3),x+round(j*t3)]:=tempicon^[i,j];
+  end;
+ for i:=1 to 120 do
+  for j:=1 to 240 do
+  landform^[j,i]:=backgr^[i,j+40];
+ randomize;
+end;
+
+procedure makecloud;
+begin
+ randseed:=tempplan^[curplan].seed;
+ for b:=0 to 700+random(400) do
+  begin
+   case random(3) of
+    0: a:=random(12)+112;
+    1: a:=random(14)+128;
+    2: a:=random(6) +160;
+   end;
+   x:=random(628);
+   y:=random(150)+5;
+   backgr^[round(sin(x/100)*y*0.4)+70,round(cos(x/100)*y)+160]:=a;
+  end;
+ for i:=1 to 120 do
+  for j:=1 to 240 do
+   landform^[j,i]:=backgr^[i+10,j+40];
+ randomize;
+end;
+
+procedure drawastoroid;
+var temp: pscreentype;
+begin
+ new(temp);
+ loadscreen('data\main',temp);
+ for j:=0 to 319 do
+  begin
+   x:=j+backgrx;
+   if x>319 then x:=x-320;
+   for i:=0 to 199 do
+    begin
+     y:=i+backgry;
+     if y>199 then y:=y-200;
+     if temp^[i,j]=255 then screen[i,j]:=backgr^[y,x];
+    end;
+  end;
+ dispose(temp);
+end;
+
+procedure readyplanet;
+var planfile: file of planettype;
+    t: pscreentype;
+    tpal: paltype;
+    part2: real;
+    str1: string[3];
+    y: real;
+begin
+ glowindex:=4;
+ mousehide;
+ reloadbackground;
+ showplanet:=true;
+ randseed:=tempplan^[curplan].seed;
+ i:=tempplan^[curplan].water+20;
+ fillchar(landform^,28800,i);
+ case tempplan^[curplan].psize of
+  0,1: radius:=900;
+  2,3: radius:=2000;
+    4: radius:=3025;
+ end;
+ if radius<901 then c2:=1.20
+  else if radius>2000 then c2:=1.09
+  else c2:=1.16;
+ randomize;
+ case random(4) of
+  0: ecl:=random(25)+30;
+  1: ecl:=80-random(25);
+  2: ecl:=200+random(25);
+  3: ecl:=250-random(25);
+ end;
+ r2:=round(sqrt(radius));
+ offset:=55-r2;
+ maxspherei:=2*r2+4;
+ spherei:=maxspherei div 2;
+ xw:=2*r2+10;
+ if (tempplan^[curplan].state=0) and (tempplan^[curplan].mode>1) then
+  begin
+   creategasplanet;
+   new(t);
+   mymove(screen,t^,16000);
+   fillchar(screen,64000,0);
+   set256colors(colors);
+   tcolor:=47;
+   bkcolor:=0;
+   printxy(30,160,'Approaching planet...');
+   printxy(30,170,'ETA T Minus     hrs');
+   for i:=1 to 200 do
+    begin
+     str((200-i):3,str1);
+     printxy(90,170,str1);
+     delay(tslice);
+    end;
+   for i:=6 to maxspherei do
+    begin
+     y:=sqrt(radius-sqr(i-r2-5));
+     pm[i]:=round((r2-y)*c2);
+     ppart[i]:=r2/y;
+    end;
+   sphere:=2;
+   fillchar(tpal,768,0);
+   set256colors(tpal);
+   mymove(t^,screen,16000);
+   dispose(t);
+   for i:=1 to 120 do
+    mymove(screen[i+12,28],planet^[i],30);
+   makegasplanet;
+  end
+ else if ((tempplan^[curplan].state=6) and (tempplan^[curplan].mode=2)) then
+  begin
+   fillchar(planet^,14400,0);
+   backgrx:=0;
+   backgry:=0;
+   makeastoroidfield;
+   new(t);
+   mymove(screen,t^,16000);
+   fillchar(screen,64000,0);
+   set256colors(colors);
+   tcolor:=47;
+   bkcolor:=0;
+   printxy(30,160,'Approaching planet...');
+   printxy(30,170,'ETA T Minus     hrs');
+   for i:=1 to 200 do
+    begin
+     str((200-i):3,str1);
+     printxy(90,170,str1);
+     delay(tslice);
+    end;
+   sphere:=3;
+   fillchar(tpal,768,0);
+   set256colors(tpal);
+   mymove(t^,screen,16000);
+   dispose(t);
+   drawastoroid;
+ end
+ else if (tempplan^[curplan].state=0) then
+  begin
+   fillchar(planet^,14400,0);
+   backgrx:=0;
+   backgry:=0;
+   makecloud;
+   new(t);
+   mymove(screen,t^,16000);
+   fillchar(screen,64000,0);
+   set256colors(colors);
+   tcolor:=47;
+   bkcolor:=0;
+   printxy(30,160,'Approaching planet...');
+   printxy(30,170,'ETA T Minus     hrs');
+   for i:=1 to 200 do
+    begin
+     str((200-i):3,str1);
+     printxy(90,170,str1);
+     delay(tslice);
+    end;
+   for i:=1 to 120 do
+    mymove(screen[i+12,28],planet^[i],30);
+   sphere:=3;
+   fillchar(tpal,768,0);
+   set256colors(tpal);
+   mymove(t^,screen,16000);
+   dispose(t);
+   drawastoroid;
+  end
+ else
+  begin
+   new(t);
+   mymove(screen,t^,16000);
+   fillchar(screen,64000,0);
+   set256colors(colors);
+   tcolor:=47;
+   bkcolor:=0;
+   printxy(30,160,'Approaching planet...');
+   printxy(30,170,'ETA T Minus     hrs');
+   index:=0;
+   i:=0;
+   createplanet(200,90);
+   createplanet(30,30);
+   createplanet(120,60);
+   fillchar(tpal,768,0);
+   set256colors(tpal);
+   mymove(t^,screen,16000);
+   dispose(t);
+   water:=50;
+   case tempplan^[curplan].state of
+    1: begin
+        waterindex:=80;
+        for j:=0 to 3 do spcindex[j]:=83-j;
+        spcindex[5]:=81;
+        spcindex[4]:=82;
+       end;
+    2: begin
+        waterindex:=32;
+        case tempplan^[curplan].mode of
+         1: for j:=0 to 5 do spcindex[j]:=1;
+         2: begin
+             for j:=0 to 3 do spcindex[j]:=1;
+             spcindex[4]:=48;
+             spcindex[5]:=49;
+            end;
+         3: begin
+             for j:=0 to 3 do spcindex[j]:=48+j;
+             spcindex[4]:=128;
+             spcindex[5]:=130;
+            end;
+        end;
+       end;
+    3: begin
+        waterindex:=33;
+        for j:=0 to 3 do spcindex[j]:=48+j;
+        spcindex[4]:=128;
+        spcindex[5]:=129;
+       end;
+    4: begin
+        waterindex:=32;
+        water:=40;
+        for j:=0 to 3 do spcindex[j]:=48+j;
+        spcindex[4]:=128;
+        spcindex[5]:=129;
+       end;
+    5: begin
+        waterindex:=32;
+        for j:=0 to 5 do spcindex[j]:=1;
+        if tempplan^[curplan].mode=3 then water:=0
+         else water:=30;
+       end;
+    6: begin
+        waterindex:=32;
+        water:=0;
+        for j:=0 to 5 do spcindex[j]:=1;
+       end;
+   end;
+   part2:=28/(255-water);
+   for j:=0 to 5 do spcindex2[j]:=spcindex[j] mod 16;
+   if water>0 then for j:=0 to water-1 do colorlookup[j]:=waterindex+6;
+   for j:=water to 255 do colorlookup[j]:=round((j-water)*part2);
+   for i:=6 to maxspherei do
+    begin
+     y:=sqrt(radius-sqr(i-r2-5));
+     pm[i]:=round((r2-y)*c2);
+     ppart[i]:=r2/y;
+    end;
+   for i:=1 to 120 do
+    mymove(screen[i+12,28],planet^[i],30);
+   makesphere;
+   sphere:=1;
+  end;
+ checkstats;
+ showtime;
+ mouseshow;
+ fadein;
+ tcolor:=31;
+ bkcolor:=3;
+ println;
+ print('Orbit achieved...');
+ randomize;
+ checkwandering;
+end;
+
+procedure createstar(c,xc,yc: integer);
+var x1,y1: integer;
+    a: longint;
+    str1: string[3];
+begin
+ x1:=xc;
+ y1:=yc;
+ xw:=2*r2+10;
+ for a:=1 to 75000 do
+  begin
+  inc(i);
+   x1:=x1-1+random(3);
+   y1:=y1-1+random(3);
+   if x1>240 then x1:=1 else if x1<1 then x1:=240;
+   if y1>120 then y1:=1 else if y1<1 then y1:=120;
+   if landform^[x1,y1]<c then landform^[x1,y1]:=landform^[x1,y1]+1;
+   if i=1125 then
+    begin
+     inc(index);
+     str((200-index):3,str1);
+     printxy(90,170,str1);
+     i:=0;
+    end;
+  end;
+end;
+
+procedure readystar;
+var y: real;
+    tpal: paltype;
+    t: pscreentype;
+    i2: integer;
+begin
+ mousehide;
+ reloadbackground;
+ showplanet:=true;
+ randseed:=tempplan^[curplan].seed;
+ compressfile(tempdir+'\current',@screen);
+ index:=0;
+ case tempplan^[curplan].mode of
+  1: begin radius:=2000; i:=120; end;
+  2: begin radius:=3025; i:=83; end;
+  3: begin radius:=900; i:=16; end;
+ end;
+ if radius<901 then c2:=1.20
+  else if radius>2000 then c2:=1.09
+  else c2:=1.16;
+ r2:=round(sqrt(radius));
+ offset:=55-r2;
+ fillchar(landform^,28800,i);
+ fillchar(planet^,14400,0);
+ i2:=i+6;
+ new(t);
+ mymove(screen,t^,16000);
+ fillchar(screen,64000,0);
+ set256colors(colors);
+ tcolor:=47;
+ bkcolor:=0;
+ printxy(30,160,'Approaching star...');
+ printxy(30,170,'ETA T Minus     hrs');
+ index:=0;
+ i:=0;
+ createstar(i2,200,90);
+ createstar(i2,30,30);
+ createstar(i2,120,60);
+ fillchar(tpal,768,0);
+ set256colors(tpal);
+ mymove(t^,screen,16000);
+ dispose(t);
+ loadscreen(tempdir+'\current',@screen);
+ showtime;
+ for i:=6 to 2*r2+4 do
+  begin
+   y:=sqrt(radius-sqr(i-r2-5));
+   pm[i]:=round((r2-y)*c2);
+   ppart[i]:=r2/y;
+  end;
+ for i:=1 to 120 do
+  mymove(screen[i+12,28],planet^[i],30);
+ makestar;
+ checkstats;
+ mouseshow;
+ fadein;
+ tcolor:=31;
+ println;
+ print('Orbit achieved...');
+ sphere:=1;
+ randomize;
+end;
+
+procedure removedata;
+begin
+ mousehide;
+ fading;
+ mouse.setmousecursor(random(3));
+ loadscreen(tempdir+'\current',@screen);
+ showresearchlights;
+ bkcolor:=3;
+ displaytextbox(false);
+ textindex:=25;
+ fadein;
+ mouseshow;
+ anychange:=true;
+ t1:=oldt1;
+end;
+
+procedure dothatartifactthing(n: integer);
+var i: integer;
+    t: longint;
+begin
+ if n<6900 then
+  begin
+   a:=random(1000);
+   case a of
+      50..99: begin
+               ship.fuelmax:=ship.fuelmax+(random(5)+1)*10;
+               if ship.fuelmax>1500 then ship.fuelmax:=1500;
+               showchar(2,'We have learned how to effectively increase our fuel capacity.');
+              end;
+    100..699: begin
+               t:=ship.crew[a div 100].xp;
+               i:=random(15)+6;
+               t:=t*i;
+               t:=round(t/100);
+               addxp(a div 100,t,2);
+               showchar(a div 100,'The analysis has been insightful.');
+              end;
+           1: begin
+               ship.accelmax:=ship.accelmax+(random(20)+1)*5;
+               if ship.accelmax>1100 then ship.accelmax:=1100;
+               showchar(2,'We have improved thrust efficency.');
+              end;
+           2: begin
+               ship.hullmax:=ship.hullmax+(random(40)+11)*10;
+               if ship.hullmax>30000 then ship.hullmax:=30000;
+               showchar(2,'We have improved hull distribution.');
+              end;
+   else begin
+        showchar(2,'Nothing new learned.');
+   end;
+   end;
+  end
+ else
+  begin
+   case n of
+    6900: begin   { shunt drive }
+           if not chevent(36) then
+            begin
+             addcargo(6900);
+             viewmode:=0;
+             viewmode2:=0;
+             n:=ship.options[8];
+             ship.options[8]:=0;
+             redoscreen(random(2500),random(2500),random(2500));
+             ship.options[8]:=n;
+             n:=ship.options[5];
+             ship.options[5]:=2;
+             showchar(2,'ENGINEER: Whoops! Didn''t know the Shunt Drive would do that!');
+             ship.options[5]:=n;
+             event(36);
+            end;
+          end;
+    6905: begin   { thermal plating tapes }
+           n:=ship.options[5];
+           ship.options[5]:=2;
+           showchar(2,'ENGINEER: We can create Thermal ThermoPlast!');
+           ship.options[5]:=n;
+           event(18);
+          end;
+    6906: event(30); {ermigen data tapes }
+    else if n>6900 then
+          begin
+           addcargo(n);
+           i:=ship.options[5];
+           ship.options[5]:=2;
+           showchar(2,'No new information from the artifact.');
+           ship.options[5]:=i;
+          end;
+   end;
+  end;
+end;
+
+procedure addgunnode;
+var old: array[1..10] of byte;
+    t: word;
+begin
+ t:=tcolor;
+ move(ship.gunnodes,old,10);
+ with ship do
+  begin
+   if shiptype[1]=3 then
+    begin
+     if shiptype[2]=3 then
+      begin
+       if shiptype[3]=3 then
+        begin
+         addcargo2(2018);
+         exit;
+        end
+       else inc(shiptype[3]);
+      end
+     else inc(shiptype[2]);
+    end
+   else if shiptype[1]=2 then shiptype[1]:=1
+   else shiptype[1]:=3;
+  end;
+ fillchar(ship.gunnodes,10,0);
+ j:=0;
+ for i:=1 to 10 do if old[i]>0 then
+  begin
+   repeat
+    inc(j);
+   until checkloc(j);
+   ship.gunnodes[j]:=old[i];
+  end;
+ if (viewmode=10) and (done) then
+  begin
+   cleanright(false);
+   readyconfigure;
+  end;
+ tcolor:=t;
+end;
+
+begin
+end.

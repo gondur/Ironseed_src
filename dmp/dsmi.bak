@@ -1,0 +1,27 @@
+(****************************************************************************
+
+                                   DSMI.INC
+                                   --------
+
+                          (C) 1993 Jussi Lahdenniemi
+
+Include file with a Uses-clause that includes all the necessary units of DSMI
+
+****************************************************************************)
+
+Uses MCP,AMP,CDI,Mixer,VDS,
+     SDI__SB,SDI__PAS,SDI__SB1{,SDI__SB16},SDI__ARI{,SDI__ARIA},Det_SB,Det_PAS,Det_ARIA,DetGUS,
+     Loaders,Cmem
+
+{$IFDEF DPMI}
+,dpmiAPI
+{$ELSE}
+,SDI__DAC
+{$ENDIF}
+
+{$IFDEF USE_EMS}
+,mcpems
+{$ELSE}
+,mcpreala
+{$ENDIF}
+

@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="4">
+      <Unit0>
+        <Filename Value="intro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="intro"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="520"/>
+        <CursorPos X="31" Y="527"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <UnitName Value="emhm"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="83"/>
+        <CursorPos X="5" Y="164"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="gmouse.pas"/>
+        <UnitName Value="gmouse"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="25"/>
+        <CursorPos X="1" Y="47"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\dmp\getcpu.pas"/>
+        <UnitName Value="GetCPU"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="13" Y="18"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit3>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="23" HistoryIndex="22">
+      <Position1>
+        <Filename Value="intro.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <Caret Line="35" Column="10" TopLine="20"/>
+      </Position3>
+      <Position4>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <Caret Line="113" Column="3" TopLine="98"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <Caret Line="107" Column="1" TopLine="98"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <Caret Line="156" Column="37" TopLine="120"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <Caret Line="163" Column="8" TopLine="146"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <Caret Line="90" Column="28" TopLine="75"/>
+      </Position8>
+      <Position9>
+        <Filename Value="..\dmp\emhm.pas"/>
+        <Caret Line="164" Column="9" TopLine="149"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\dmp\getcpu.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position10>
+      <Position11>
+        <Filename Value="..\dmp\getcpu.pas"/>
+        <Caret Line="13" Column="17" TopLine="1"/>
+      </Position11>
+      <Position12>
+        <Filename Value="..\dmp\getcpu.pas"/>
+        <Caret Line="11" Column="29" TopLine="1"/>
+      </Position12>
+      <Position13>
+        <Filename Value="intro.pas"/>
+        <Caret Line="17" Column="7" TopLine="1"/>
+      </Position13>
+      <Position14>
+        <Filename Value="intro.pas"/>
+        <Caret Line="141" Column="2" TopLine="126"/>
+      </Position14>
+      <Position15>
+        <Filename Value="intro.pas"/>
+        <Caret Line="137" Column="62" TopLine="126"/>
+      </Position15>
+      <Position16>
+        <Filename Value="intro.pas"/>
+        <Caret Line="282" Column="13" TopLine="591"/>
+      </Position16>
+      <Position17>
+        <Filename Value="intro.pas"/>
+        <Caret Line="361" Column="26" TopLine="346"/>
+      </Position17>
+      <Position18>
+        <Filename Value="intro.pas"/>
+        <Caret Line="291" Column="5" TopLine="265"/>
+      </Position18>
+      <Position19>
+        <Filename Value="intro.pas"/>
+        <Caret Line="326" Column="7" TopLine="312"/>
+      </Position19>
+      <Position20>
+        <Filename Value="intro.pas"/>
+        <Caret Line="331" Column="4" TopLine="317"/>
+      </Position20>
+      <Position21>
+        <Filename Value="intro.pas"/>
+        <Caret Line="350" Column="4" TopLine="337"/>
+      </Position21>
+      <Position22>
+        <Filename Value="intro.pas"/>
+        <Caret Line="356" Column="4" TopLine="342"/>
+      </Position22>
+      <Position23>
+        <Filename Value="intro.pas"/>
+        <Caret Line="361" Column="9" TopLine="347"/>
+      </Position23>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

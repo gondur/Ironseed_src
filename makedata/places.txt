@@ -1,0 +1,29 @@
+sys     place
+---     -----------
+211     satellite from is2
+119     phaedor moch 1st encounter
+129     hallifax place
+        trojan gate to lix *need coords*
+31      lix
+123     aria
+169     aard ship in distress
+205     titerian worshipers
+98      monks
+138     derelict with thermoplast
+164     nova
+229     shunt ship
+28      temple
+33      derraak
+14      derraak base
+23      scavs gathering place near end
+247     god's eye
+        void dwellers   55,113,89  and in all asteroid fields
+93      sengzhac 1st encounter
+138     d'pahk
+        trojan gate to moch *need coords*
+78      quai pa'loi
+191     guild
+171     icon
+221     titerian
+45      ermigen
+

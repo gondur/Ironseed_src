@@ -1,0 +1,11 @@
+unit version;
+
+interface
+var
+   versionstring :string[10]; 
+implementation
+begin
+   versionstring :=
+   {1234567890}
+   'v1.20.0014';
+end.

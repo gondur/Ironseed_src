@@ -1,0 +1,9 @@
+crewcon1.txt:
+- 500     -1      1       65      ERASED ERASE
++ -1      -1      1       65      ERASED ERASE
+- 501     -1      3       66      JAMMING SHIELD READING INCONCLUSIVE
++ 102     -1      3       66      JAMMING SHIELD READING INCONCLUSIVE
+crewcon4.txt:
+- 500     -1      1       45      D'PAHK WORMS
++ 102     -1      1       45      JAMMING SHIELD READING
+

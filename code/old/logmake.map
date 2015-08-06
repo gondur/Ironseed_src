@@ -1,0 +1,88 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 003D2H 003D3H makecomputerlogs   CODE
+ 003E0H 00CD8H 008F9H System             CODE
+ 00CE0H 01699H 009BAH DATA               DATA
+ 016A0H 0569FH 04000H STACK              STACK
+ 056A0H 056A0H 00000H HEAP               HEAP
+
+  Address         Publics by Value
+
+ 0000:002E       @
+ 00CE:0002       OvrCodeList
+ 00CE:0004       OvrHeapSize
+ 00CE:0006       OvrDebugPtr
+ 00CE:000A       OvrHeapOrg
+ 00CE:000C       OvrHeapPtr
+ 00CE:000E       OvrHeapEnd
+ 00CE:0010       OvrLoadList
+ 00CE:0012       OvrDosHandle
+ 00CE:0014       OvrEmsHandle
+ 00CE:0016       HeapOrg
+ 00CE:001A       HeapPtr
+ 00CE:001E       HeapEnd
+ 00CE:0022       FreeList
+ 00CE:0026       FreeZero
+ 00CE:002A       HeapError
+ 00CE:002E       ExitProc
+ 00CE:0032       ExitCode
+ 00CE:0034       ErrorAddr
+ 00CE:0038       PrefixSeg
+ 00CE:003A       StackLimit
+ 00CE:003C       InOutRes
+ 00CE:003E       RandSeed
+ 00CE:0042       SelectorInc
+ 00CE:0044       Seg0040
+ 00CE:0046       SegA000
+ 00CE:0048       SegB000
+ 00CE:004A       SegB800
+ 00CE:004C       Test8086
+ 00CE:004D       Test8087
+ 00CE:004E       FileMode
+ 00CE:0052       l
+ 00CE:0534       title
+ 00CE:0568       ft
+ 00CE:0668       i
+ 00CE:066A       j
+ 00CE:066C       a
+ 00CE:066E       f
+ 00CE:06EE       f2
+ 00CE:076E       Input
+ 00CE:086E       Output
+ 00CE:096E       SaveInt00
+ 00CE:0972       SaveInt02
+ 00CE:0976       SaveInt1B
+ 00CE:097A       SaveInt21
+ 00CE:097E       SaveInt23
+ 00CE:0982       SaveInt24
+ 00CE:0986       SaveInt34
+ 00CE:098A       SaveInt35
+ 00CE:098E       SaveInt36
+ 00CE:0992       SaveInt37
+ 00CE:0996       SaveInt38
+ 00CE:099A       SaveInt39
+ 00CE:099E       SaveInt3A
+ 00CE:09A2       SaveInt3B
+ 00CE:09A6       SaveInt3C
+ 00CE:09AA       SaveInt3D
+ 00CE:09AE       SaveInt3E
+ 00CE:09B2       SaveInt3F
+ 00CE:09B6       SaveInt75
+
+Line numbers for makecomputerlogs(MAKEDATA\LOGMAKE.PAS) segment makecomputerlogs
+
+    21 0000:002E    22 0000:0036    23 0000:0045    24 0000:004F
+    25 0000:005E    26 0000:006B    27 0000:007A    28 0000:0086
+    30 0000:0091    31 0000:0097    32 0000:00AD    33 0000:00B4
+    34 0000:00D8    35 0000:00DD    36 0000:00E9    37 0000:00F1
+    38 0000:0111    39 0000:0130    40 0000:014F    41 0000:016E
+    42 0000:017D    43 0000:018C    44 0000:019B    46 0000:01AE
+    47 0000:01C4    49 0000:01D6    51 0000:01E1    52 0000:01FD
+    53 0000:0209    54 0000:0239    56 0000:0243    57 0000:024F
+    58 0000:025D    59 0000:028B    60 0000:02B9    61 0000:02E6
+    62 0000:0313    63 0000:0328    64 0000:033D    65 0000:0352
+    68 0000:036B    70 0000:0387    71 0000:0391    72 0000:039B
+    73 0000:03AD    74 0000:03B7    75 0000:03C1    76 0000:03CB
+
+Program entry point at 0000:002E

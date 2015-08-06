@@ -1,0 +1,62 @@
+CONV BEGIN
+
+-1      -1      1       1       HI HELLO GREETINGS HYA HIYA SALUTATIONS WELCOME
+-1      20000   1       2       BYE GOOD-BYE GOODBYE OVER OUT 10-4 QUIT
+215     -1      1       4       HELP
+-1      214     1       3       HELP
+-1      -1      1       5       VOID DWELLERS
+-1      -1      1       5       D'PAHK WORMS
+-1      -1      1       5       SENGZHAC BUGS BUGGERS
+-1      -1      1       5       GUILD
+-1      -1      1       5       PHAEDOR MOCH PUPPET
+-1      -1      1       5       ERMIGEN
+-1      -1      1       11      QUAI PA'LOI
+-1      -1      1       12      PAI ALOI
+-1      -1      1       13      Q'OOUL
+-1      -1      1       5       ICON
+-1      -1      1       5       TITERIAN
+-1      -1      1       5       YLINTHLIXYMN YILLER
+-1      -1      1       5       SCAVENGERS SCAVS
+-1      -1      1       5       AARD
+-1      -1      1       5       MALZATOIR
+-1      -1      1       5       **** NAMELESS
+-1      -1      1       24      MONKS MONK
+-1      -1      1       26      SELL BUY TRADE TRADERS
+-1      -1      1       5       HALLIFAX MANUEVER
+
+-500
+
+GENERIC
+0       WHAT?
+
+HELLO
+1       HI.  WE NEED ^HELP^ BADLY.
+
+BYE
+2       BYE.  COME BACK AND ^HELP^ US SOON.
+
+HELP
+3       WE NEED GOOLAS.  THEY ARE BIG WEAPONS THAT WE CAN USE TO ATTACK THE PAI ALOI SHIPS.  WITHOUT THEM, WE WILL HAVE TO HIDE HERE.  THE GUILD PROBABLY HAS SOME.  YOU CAN FIND THE GUILD AT ********************.
+
+HELP
+4       WE NEED GOOLAS.  PLEASE TRY TO GET THEM FOR US.
+
+VOID
+5       WE HAVEN'T HEARD ANYTHING ABOUT THEM RECENTLY.  WE HAVEN'T GOTTEN OUT MUCH SINCE WE WENT INTO HIDING.
+
+QUAI PA'LOI
+11      IT IS SAD THAT OUR RACE HAS RESORTED TO GURILLA TACTICS IN ORDER TO RESOLVE OUR DIFFERENCES.
+
+PAI ALOI
+12      THEY ARE DANGEROUS AND UNPREDICABLE.  WE WILL NOT BE ABLE TO GO AGAINST THEM WITHOUT ^HELP^.
+
+Q'OOUL
+13      MAYBE WE WILL BE ABLE TO RETURN FROM OUR EXILE SOON.  WE ARE QUITE UNHAPPY HERE AWAY FROM OUR PRECIOUS HOME.
+
+MONKS
+24      DIDN'T THEY GO TO CUBA OR SOMETHING.
+
+SELL
+26      WE HAVE NOTHING HERE TO TRADE WITH.  WE WISH WE COULD THOUGH.
+
+-500

@@ -1,0 +1,84 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 0032DH 0032EH ironseed           CODE
+ 00330H 003C8H 00099H Dos                CODE
+ 003D0H 00F07H 00B38H System             CODE
+ 00F10H 0125DH 0034EH DATA               DATA
+ 01260H 01C87H 00A28H STACK              STACK
+ 01C90H 01C90H 00000H HEAP               HEAP
+
+  Address         Publics by Value
+
+ 0000:0044       getdoserror
+ 0000:00EA       @
+ 0033:0000       Exec
+ 0033:0094       DosExitCode
+ 00F1:0002       p
+ 00F1:0026       s
+ 00F1:0068       OvrCodeList
+ 00F1:006A       OvrHeapSize
+ 00F1:006C       OvrDebugPtr
+ 00F1:0070       OvrHeapOrg
+ 00F1:0072       OvrHeapPtr
+ 00F1:0074       OvrHeapEnd
+ 00F1:0076       OvrLoadList
+ 00F1:0078       OvrDosHandle
+ 00F1:007A       OvrEmsHandle
+ 00F1:007C       HeapOrg
+ 00F1:0080       HeapPtr
+ 00F1:0084       HeapEnd
+ 00F1:0088       FreeList
+ 00F1:008C       FreeZero
+ 00F1:0090       HeapError
+ 00F1:0094       ExitProc
+ 00F1:0098       ExitCode
+ 00F1:009A       ErrorAddr
+ 00F1:009E       PrefixSeg
+ 00F1:00A0       StackLimit
+ 00F1:00A2       InOutRes
+ 00F1:00A4       RandSeed
+ 00F1:00A8       SelectorInc
+ 00F1:00AA       Seg0040
+ 00F1:00AC       SegA000
+ 00F1:00AE       SegB000
+ 00F1:00B0       SegB800
+ 00F1:00B2       Test8086
+ 00F1:00B3       Test8087
+ 00F1:00B4       FileMode
+ 00F1:00B8       code
+ 00F1:00BA       str1
+ 00F1:00FC       DosError
+ 00F1:0102       Input
+ 00F1:0202       Output
+ 00F1:0302       SaveInt00
+ 00F1:0306       SaveInt02
+ 00F1:030A       SaveInt1B
+ 00F1:030E       SaveInt21
+ 00F1:0312       SaveInt23
+ 00F1:0316       SaveInt24
+ 00F1:031A       SaveInt34
+ 00F1:031E       SaveInt35
+ 00F1:0322       SaveInt36
+ 00F1:0326       SaveInt37
+ 00F1:032A       SaveInt38
+ 00F1:032E       SaveInt39
+ 00F1:0332       SaveInt3A
+ 00F1:0336       SaveInt3B
+ 00F1:033A       SaveInt3C
+ 00F1:033E       SaveInt3D
+ 00F1:0342       SaveInt3E
+ 00F1:0346       SaveInt3F
+ 00F1:034A       SaveInt75
+
+Line numbers for ironseed(CODE\IS.PAS) segment ironseed
+
+    29 0000:0044    30 0000:0048    31 0000:004B    32 0000:0061
+    33 0000:006D    35 0000:0072    36 0000:0099    37 0000:00B5
+    39 0000:00EA    40 0000:00F3    41 0000:0160    43 0000:0166
+    44 0000:0169    45 0000:019F    46 0000:01D5    47 0000:0215
+    48 0000:021D    49 0000:0253    52 0000:02B5    53 0000:02C9
+    54 0000:02F4    55 0000:02FA    58 0000:02FC    59 0000:0304
+    60 0000:031C    61 0000:0326
+
+Program entry point at 0000:00EA

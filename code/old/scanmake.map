@@ -1,0 +1,80 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 000FAH 000FBH generatecargodata  CODE
+ 00100H 00B04H 00A05H System             CODE
+ 00B10H 00F5BH 0044CH DATA               DATA
+ 00F60H 04F5FH 04000H STACK              STACK
+ 04F60H 04F60H 00000H HEAP               HEAP
+
+  Address         Publics by Value
+
+ 0000:0038       @
+ 00B1:0002       OvrCodeList
+ 00B1:0004       OvrHeapSize
+ 00B1:0006       OvrDebugPtr
+ 00B1:000A       OvrHeapOrg
+ 00B1:000C       OvrHeapPtr
+ 00B1:000E       OvrHeapEnd
+ 00B1:0010       OvrLoadList
+ 00B1:0012       OvrDosHandle
+ 00B1:0014       OvrEmsHandle
+ 00B1:0016       HeapOrg
+ 00B1:001A       HeapPtr
+ 00B1:001E       HeapEnd
+ 00B1:0022       FreeList
+ 00B1:0026       FreeZero
+ 00B1:002A       HeapError
+ 00B1:002E       ExitProc
+ 00B1:0032       ExitCode
+ 00B1:0034       ErrorAddr
+ 00B1:0038       PrefixSeg
+ 00B1:003A       StackLimit
+ 00B1:003C       InOutRes
+ 00B1:003E       RandSeed
+ 00B1:0042       SelectorInc
+ 00B1:0044       Seg0040
+ 00B1:0046       SegA000
+ 00B1:0048       SegB000
+ 00B1:004A       SegB800
+ 00B1:004C       Test8086
+ 00B1:004D       Test8087
+ 00B1:004E       FileMode
+ 00B1:0052       cargo
+ 00B1:006C       f
+ 00B1:00EC       ft
+ 00B1:01EC       index
+ 00B1:01EE       j
+ 00B1:01F0       i
+ 00B1:01F2       c
+ 00B1:01F4       scan
+ 00B1:0200       Input
+ 00B1:0300       Output
+ 00B1:0400       SaveInt00
+ 00B1:0404       SaveInt02
+ 00B1:0408       SaveInt1B
+ 00B1:040C       SaveInt21
+ 00B1:0410       SaveInt23
+ 00B1:0414       SaveInt24
+ 00B1:0418       SaveInt34
+ 00B1:041C       SaveInt35
+ 00B1:0420       SaveInt36
+ 00B1:0424       SaveInt37
+ 00B1:0428       SaveInt38
+ 00B1:042C       SaveInt39
+ 00B1:0430       SaveInt3A
+ 00B1:0434       SaveInt3B
+ 00B1:0438       SaveInt3C
+ 00B1:043C       SaveInt3D
+ 00B1:0440       SaveInt3E
+ 00B1:0444       SaveInt3F
+ 00B1:0448       SaveInt75
+
+Line numbers for generatecargodata(MAKEDATA\SCANMAKE.PAS) segment generatecargodata
+
+    18 0000:0038    19 0000:0040    20 0000:004F    21 0000:005B
+    22 0000:006A    26 0000:0074    27 0000:007E    29 0000:008A
+    30 0000:00B4    31 0000:00C6    32 0000:00D8    33 0000:00DF
+    34 0000:00E9    35 0000:00F3
+
+Program entry point at 0000:0038

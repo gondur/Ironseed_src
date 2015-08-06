@@ -1,0 +1,96 @@
+PRE-ALPHA VERSION (.5)
+PHAEDOR MOCH
+FRIENDLY
+AT THE HOMEWORLD
+
+257     20000   1       4       HI HELLO GREETINGS HYA HIYA SALUTATIONS WELCOME
+-1      -1      1       1       HI HELLO GREETINGS HYA HIYA SALUTATIONS WELCOME
+-1      20000   1       2       BYE GOOD-BYE GOODBYE OVER OUT 10-4 QUIT
+-1      -1      1       5       VOID DWELLERS
+-1      -1      1       5       D'PAHK WORMS
+-1      -1      1       5       SENGZHAC BUGS BUGGERS
+-1      -1      1       5       GUILD
+-1      -1      1       9       PHAEDOR MOCH PUPPET
+-1      -1      1       5       ERMIGEN
+-1      -1      1       5       QUAI PA'LOI
+-1      -1      1       5       PAI ALOI
+-1      -1      1       5       Q'OOUL
+-1      -1      1       5       ICON
+-1      -1      1       6       TITERIAN
+-1      -1      1       5       YLINTHLIXYMN YILLER
+-1      -1      1       5       SCAVENGERS SCAVS
+-1      -1      1       5       AARD
+-1      -1      1       5       MALZATOIR
+-1      -1      1       5       **** NAMELESS
+-1      -1      1       23      TROJAN GATE GATES
+-1      -1      1       24      MONKS MONK
+-1      -1      1       25      HOMEWORLD HOME WORLD
+258     -1      1       26      SELL BUY TRADE TRADERS
+214     20007   1       27      SELL BUY TRADE TRADERS
+-1      20111   1       28      *YES.ANSWER
+-1      -1      1       29      *NO.ANSWER
+-1      -1      1       26      SELL BUY TRADE TRADERS
+-1      -1      1       22      SHUNT
+-1      -1      1       30      PHASE
+-1      -1      1       31      GOD'S EYE
+-1      -1      1       32      IRONSEED
+258     -1      1       11      GOOLAS
+214     -1      1       10      GOOLAS
+
+-500
+
+HI
+1       HELLO.
+
+BYE
+2       BYE.
+
+HI
+4       P4> OH LOOK, SOMEONE IS HERE FOR THE PARTY.#P2> HEY, DO YOU HAVE AN APPOINTMENT?  WELL THEN GET OUT OF HERE BEFORE I DECIDE TO BLAST YOU.
+
+RACES
+5       WE HAVE BEEN AWAY TO LONG TO KNOW ANYTHING RECENT.
+
+TITERIANS
+6       THEY WERE ALWAYS CONCERNED WITH US.  RATHER NICE GALS TOO.
+
+PUPPET
+9       WE ARE HERE.
+
+GOOLAS
+10      WE WILL _TRADE_ THEM WITH YOU FOR SOME JUNK...WHATEVER YOU MIGHT HAVE.  WE HAVE USES FOR SUCH THINGS.
+
+GOOLAS
+11      WE ALREADY GAVE THEM TO YOU.
+
+SHUNT
+22      THAT SOUNDS INTERESTING...MAYBE WE WILL BE ABLE TO DEVELOP SOMETHING LIKE THAT.
+
+GATES
+23      THEY ARE CONVIENINT FOR HIDING BEHIND.
+
+MONKS
+24      THEY ARE NICE.
+
+HOME WORLD
+25      WE HAD TO HIDE IT HERE.
+
+TRADE
+26      WE HAVE NOTHING THAT WOULD INTEREST YOU.
+
+TRADE
+27      WOULD YOU LIKE TO TRADE SOME JUNK FOR GOOLAS?
+
+YES ANSWER
+28      *should be blank*
+
+NO ANSWER
+29      OK, WELL IF YOU DECIDE YOU WANT THEM WE HAVE THEM.
+
+PHASE
+30      P6> I CAN'T TALK ABOUT THAT...THEY WILL NOTICE#P2> WHAT WAS THAT?#P1> SOUNDED LIKE LOWLEY.  GEE, IT HAS BEEN A LONG TIME SINCE HE VISITED.
+
+GOD'S EYE
+31      COULD BE A TYPE OF TEMPORAL GATE.
+
+-500

@@ -1,0 +1,12 @@
+from os import *
+
+
+l = listdir(".")
+
+#print l
+
+for x in l:
+    y = x.lower()
+    if x != y:
+        rename(x, y)
+        #print x

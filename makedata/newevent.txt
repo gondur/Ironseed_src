@@ -1,0 +1,197 @@
+Wacky New Event List
+
+big wacky logs for meetin' aliens
+
+0 SENGZHAC
+1 D'PAHK
+2 AARD
+3 ERMIGEN
+4 TITARIAN
+5 QUAI PA'LOI
+6 SCAVENGERS
+7 ICON
+8 GUILD
+9 VOID DWELLERS
+10 GREETINGS AND HALLUCINATIONS
+11 SECTOR CODEX
+12 SECOND BUOY LOCATED
+13 HALLIFAX MANEUVER
+14 TROJAN GATE
+15 A PLANET'S DESTRUCTION
+16 MONKS OF PAPESIA
+17 DERELICT DISCOVERED
+18 DEVELOPMENT OF THERMOPLAST TECHNOLOGY
+19 ENCOUNTERED NOVA (INCLUDE VISION OF TEMPLE COORD)
+20 LOCATION OF SHUNT CAPABLE SHIP
+21 DESTRUCTION OF THE MALZATOIR
+22 DISCOVERY OF ICON DATA BUOY
+23 THE GUILD JOIN THE KENDAR
+24 INSIDE THE TEMPLE OF IRON
+25 INSIDE THE PIRATE BASE
+26 PIRACY!
+27 ICON TRANSMISSION
+28 ERMIGEN DATA TAPES
+29 LAST SCAVENGER TRANSMISSION
+30 THE ERMIGEN WERE DESTROYED
+31 THE AARD JOIN THE KENDAR
+32 ICON URGE YOU TO REFORM THE KENDAR
+33 REPAIR THE ERMIGEN SHIP
+34 ERMIGEN JOIN THE KENDAR
+35 TITARIANS MENTION BRIGHT SPOT?
+36 SHUNT DRIVE RESEARCH COMPLETED
+37 GUILD WANTS DERRAAK ELIMINATED
+38 QUAI GO TO WAR
+39 THE GUILD TELL YOU THAT THE MOCH HAVE THE GOOLAS
+40 ENCOUNTER THE PHAEDOR MOCH AND REPAIR THEIR SHIP
+41 GUILD TELL YOU HOW AND WHERE TO DEFEAT DERRAAK(THE PIRATE)
+42 FIND TEMPLE OF IRON
+43 GUILD THNK YOU FOR YLINTH'S GENES
+44 VOID DWELLERS TELL YOU ABOUT GOD'S EYE
+45 RECEIVE DOOM GATE
+46 RECEIVE THERMATURGE
+47 TITARIAN JOIN THE KENDAR
+48 QUAI PALOI JOIN KENDAR
+49 DISCOVER YLINTH GENES(describe it in case the player doesn't know who they are)
+
+Sengzhac
+what do they want?      what do they give?      statement?
+0.LOG45                 NOTHING                 WE HAVE NOTHING MORE TO SAY TO YOU...
+1.LOG34                 NOTHING                 still WE DO not think you Are worthy... do more for us.
+2.log24                 doom gate(log45)        we will be joining your silly kendar. EXPLAIN WHY THE TEMPLE IS SIGNIFIGANT.
+3.log0                  nothing                 YOU RETURN? DIE, LITTLE PIGGY
+4.
+5.
+6.
+7.
+8.
+9.
+
+D'phak
+what do they want?      what do they give?      statement?
+0.LOG 46                NOTHING                 FINAL HELLO...
+1.log18                 thermaturge(LOG46)      join the kendar
+2.LOG43                 NOTHING                 AHHH... YOU HAVE RETURNED
+3.log30                 NOTHING                 d'pahk suggest giving yiller genes to the guild
+4.LOG 34                NOTHING                 YOU HAVE NO MERIT... WE WILL NOT JOIN (THE ERMIGEN HAVE NOT JOINED)
+5.log1                  nothing                 ahhh... you have returned.
+6.
+7.
+8.
+9.
+
+Aard
+what do they want?      what do they give?      statement?
+0.LOG45                 LOG31                   HELLO SIGNIFYING THAT THEY ARE NOW MEMBERS...
+1.LOG27(ERMIGEN DEATH)  NOTHING                 YOU MUST HURRY AND GATHER TOGETHER THE KENDAR
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+
+Ermigen
+what do they want?      what do they give?      statement?
+3.LOG34                 NOTHING                 HELLO AGAIN FELLOW MEMBER.
+2.LOG32                 LOG34                   WE WILL JOIN(INCLUDE THEM TELLING YOU ABOUT THE TROJAN GATE.)
+1.LOG33                 NOTHING                 HELLO AGAIN.
+0.TORQUE STANCHION      LOG33                   THANKS.
+4.
+5.
+6.
+7.
+8.
+9.
+
+Titarian
+what do they want?      what do they give?      statement?
+0.LOG47                 NOTHING                 LAST HELLO...
+1.LOG36                 LOG47                   WE JOIN THE KENDAR
+2.LOG35                 NOTHING                 THEY MENTION THE DERELICT (MAYBE THE LOCATION?)
+3.LOG4                  LOG35                   WE FORESEE A BRIGHT SPOT
+4.LOG25                 NOTHING                 PIRATE IS DEAD RESPONSE
+5.LOG37                 NOTHING                 WE TELL YOU WHERE THE PIRATE IS
+6.
+7.
+8.
+9.
+
+Quai Pa'loi
+what do they want?      what do they give?      statement?
+0.SILLY PART 1          GOOD PART 1             THANKS 1
+1.SILLY PART 2          GOOD PART 2             THANKS 2
+2.SILLY PART 3          GOOD PART 3             THANKS 3
+3.LOG 48                NOTHING                 FINAL HELLO
+4.GOOLAS                MULTI-IMAGER(LOG48)     END WAR JOIN KENDAR?
+5.LOG38                 NOTHING                 WE'RE HAVING A WAR ALREADY...SHEESH. GO AWAY.
+6.LOG13                 LOG38(QUAI WAR)         QUAI WAR...
+7.LOG30(ERMGN DEAD)     NOTHING                 TENSION MOUNTS... THE PLOT THICKENS
+8.LOG21                 NOTHING                 STRANGE THINGS ARE AFOOT AT THE CIRCLE K
+9.LOG 5                 NOTHING                 HELLO AGAIN
+
+Scavengers
+what do they want?      what do they give?      statement?
+0.LOG30                 NOTHING                 WE ARE NEW IMPROVED VERY EVIL SCAVENGERS... WE WILL DESTROY YU ALL (CACKLES)
+1.LOG21                 NOTHING                 A BIT MORE AGRESSIVE
+2.LOG6                  NOTHING                 THE OTHER HELLO...
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+
+Icon
+what do they want?      what do they give?      statement?
+0.GLYPTIC SCYTHE        NOTHING                 WE DECYPHERED THE WORD CUTTER... AND THE MOCH STAND FOR...
+1.LOG21                 NOTHING                 GO FORTH AND SPEAK FOR US THAT THE KENDAR MIGHT BE AGAIN!
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+
+The Guild
+what do they want?      what do they give?      statement?
+0.IF LOG39 EXISTS THEN SKIP NEXT IF LOG SCAN
+1.LOG38                 LOG39                   THE MOCH HAVE THE GOOLAS
+2.LOG44                 NOTHING                 FINAL HELLO (HERE'S HOW YOU KILL THE SCAVENGERS)
+3.LOG25                 LOG44                   WE JOIN YOU NOW... THIS KENDAR OF YOURS.
+4.LOG43                 LOG41                   WE KNOW WHAT WE WANT YOU TO DO... KILL DERRAAK
+5.LOG49                 LOG43                   NOW... BEFORE WE JOIN, WE NEED TO YOU NO KILL DERRAAK.
+6.LOG8                  NOTHING                 HELLO... I BELIEVE WE'VE MET.
+7.
+8.
+9.
+
+Phaedor Moch
+what do they want?      what do they give?      statement?
+3.LOG48(QUAI WAR ENDS)  NOTHING                 FINAL HELLO
+1.LOG39             GOOLAS(IF DON'T HAVE THEM)  AND WE HAVE THE GOOLAS!!
+0.LOG40                 NOTHING                 OTHER HELLO
+2.NOTHING               GLYPTIC SCYTHE(LOG40)   HAPPY? I THOUGHT SO.(TAKE IT TO THE ICON)
+4.
+5.
+6.
+7.
+8.
+9.
+
+Void Dwellers
+what do they want?      what do they give?      statement?
+0.LOG44                 NOTHING                 FINAL HELLO
+1.LOG19                 LOG44                   VOID DWELLERS TELL YOU ABOUT GOD EYE... IT'S SIGNIFIGANCE.
+2.LOG9                  NOTHING                 OTHER HELLO
+3.
+4.
+5.
+6.
+7.
+8.
+9.

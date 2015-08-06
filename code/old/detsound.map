@@ -1,0 +1,148 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 0023AH 0023BH detectsoundinformation CODE
+ 00240H 005FCH 003BDH detgus             CODE
+ 00600H 0082CH 0022DH Det_Aria           CODE
+ 00830H 00B06H 002D7H Det_Pas            CODE
+ 00B10H 011FCH 006EDH det_SB             CODE
+ 01200H 01200H 00000H MCP                CODE
+ 01200H 01200H 00000H mcpems             CODE
+ 01200H 01200H 00000H emhm               CODE
+ 01200H 0125AH 0005BH Csupport           CODE
+ 01260H 012CDH 0006EH Dos                CODE
+ 012D0H 012D0H 00000H cdi                CODE
+ 012D0H 0189DH 005CEH Crt                CODE
+ 018A0H 018C1H 00022H Strings            CODE
+ 018D0H 02601H 00D32H System             CODE
+ 02610H 02A77H 00468H DATA               DATA
+ 02A80H 06A7FH 04000H STACK              STACK
+ 06A80H 06A80H 00000H HEAP               HEAP
+
+  Address         Publics by Value
+
+ 0000:0000       HexWord
+ 0000:006B       detectcardinfo
+ 0000:0140       displaydata
+ 0000:0216       @
+ 0024:0100       detectGUS
+ 0060:0071       detectARIA
+ 0083:01AC       detectPAS
+ 00B1:04AF       detectSB
+ 00B1:057F       detectSBpro
+ 00B1:062F       detectSB16
+ 0120:003B       @
+ 0126:0000       GetEnv
+ 012D:000D       @
+ 012D:0152       TextMode
+ 012D:0167       Window
+ 012D:01A7       ClrScr
+ 012D:01C1       ClrEol
+ 012D:01D5       InsLine
+ 012D:01DA       DelLine
+ 012D:01FA       GotoXY
+ 012D:0226       WhereX
+ 012D:0232       WhereY
+ 012D:023E       TextColor
+ 012D:0258       TextBackground
+ 012D:0270       LowVideo
+ 012D:0276       HighVideo
+ 012D:027C       NormVideo
+ 012D:0283       Sound
+ 012D:02B0       NoSound
+ 012D:02B7       KeyPressed
+ 012D:02C9       ReadKey
+ 012D:02EB       AssignCrt
+ 018A:0000       StrPas
+ 0261:0114       OvrCodeList
+ 0261:0116       OvrHeapSize
+ 0261:0118       OvrDebugPtr
+ 0261:011C       OvrHeapOrg
+ 0261:011E       OvrHeapPtr
+ 0261:0120       OvrHeapEnd
+ 0261:0122       OvrLoadList
+ 0261:0124       OvrDosHandle
+ 0261:0126       OvrEmsHandle
+ 0261:0128       HeapOrg
+ 0261:012C       HeapPtr
+ 0261:0130       HeapEnd
+ 0261:0134       FreeList
+ 0261:0138       FreeZero
+ 0261:013C       HeapError
+ 0261:0140       ExitProc
+ 0261:0144       ExitCode
+ 0261:0146       ErrorAddr
+ 0261:014A       PrefixSeg
+ 0261:014C       StackLimit
+ 0261:014E       InOutRes
+ 0261:0150       RandSeed
+ 0261:0154       SelectorInc
+ 0261:0156       Seg0040
+ 0261:0158       SegA000
+ 0261:015A       SegB000
+ 0261:015C       SegB800
+ 0261:015E       Test8086
+ 0261:015F       Test8087
+ 0261:0160       FileMode
+ 0261:0164       scard
+ 0261:020A       CheckBreak
+ 0261:020B       CheckEOF
+ 0261:020C       DirectVideo
+ 0261:020D       CheckSnow
+ 0261:020E       LastMode
+ 0261:0210       TextAttr
+ 0261:0212       WindMin
+ 0261:0214       WindMax
+ 0261:021C       Input
+ 0261:031C       Output
+ 0261:041C       SaveInt00
+ 0261:0420       SaveInt02
+ 0261:0424       SaveInt1B
+ 0261:0428       SaveInt21
+ 0261:042C       SaveInt23
+ 0261:0430       SaveInt24
+ 0261:0434       SaveInt34
+ 0261:0438       SaveInt35
+ 0261:043C       SaveInt36
+ 0261:0440       SaveInt37
+ 0261:0444       SaveInt38
+ 0261:0448       SaveInt39
+ 0261:044C       SaveInt3A
+ 0261:0450       SaveInt3B
+ 0261:0454       SaveInt3C
+ 0261:0458       SaveInt3D
+ 0261:045C       SaveInt3E
+ 0261:0460       SaveInt3F
+ 0261:0464       SaveInt75
+
+Line numbers for detectsoundinformation(CODE\DETSOUND.PAS) segment detectsoundinformation
+
+    13 0000:0000    14 0000:0004    15 0000:0067    20 0000:006B
+    21 0000:006F    22 0000:0074    23 0000:0082    24 0000:0090
+    25 0000:00A4    26 0000:00B8    27 0000:00CC    28 0000:00E0
+    29 0000:00F4    32 0000:0140    33 0000:0144    34 0000:0171
+    35 0000:01A4    36 0000:01CA    37 0000:01F0    38 0000:0214
+    40 0000:0216    41 0000:0228    42 0000:0230    43 0000:0233
+
+Line numbers for detgus(DETGUS.PAS) segment detgus
+
+    26 0024:0000    27 0024:0003    28 0024:0020    29 0024:003E
+    34 0024:0042    35 0024:005D    36 0024:0063    37 0024:0080
+    38 0024:00D4    39 0024:00DB    48 0024:0100    49 0024:0104
+    50 0024:012D    51 0024:013C    52 0024:0145    53 0024:0164
+    54 0024:018B    55 0024:019C    56 0024:01AC    57 0024:01B5
+    58 0024:01D4    59 0024:01FB    60 0024:020C    61 0024:021F
+    62 0024:0228    63 0024:0247    64 0024:026E    65 0024:027F
+    66 0024:0292    67 0024:029B    68 0024:02BA    69 0024:02E1
+    70 0024:02F2    71 0024:0305    72 0024:030E    73 0024:0321
+    74 0024:032B    75 0024:0335    76 0024:0348    77 0024:0363
+    78 0024:036A    79 0024:0373    80 0024:037C    81 0024:0384
+    82 0024:038C    83 0024:0394    84 0024:039D    85 0024:03A7
+    86 0024:03B1    87 0024:03B6
+
+Line numbers for Csupport(CSUPPORT.PAS) segment Csupport
+
+   288 0120:0000   289 0120:0004   290 0120:002B   291 0120:0039
+   299 0120:003B   300 0120:003E   301 0120:004C   302 0120:0059
+
+Program entry point at 0000:0216

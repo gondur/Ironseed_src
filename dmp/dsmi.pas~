@@ -1,0 +1,177 @@
+(****************************************************************************
+
+                                   DSMI.PAS
+                                   --------
+
+                          (C) 1993 Jussi Lahdenniemi
+
+initDSMI routine for easer MCP, AMP and TS initialization
+
+****************************************************************************)
+
+unit DSMI;
+
+{$X+}
+{$IFDEF DPMI}
+{'initDSMI is not available in the protected mode! Real mode target only!'}
+{$ENDIF}
+
+interface
+
+uses MCP,CDI;
+
+Function initDSMI(rate,buffer,options:longint;scard:PSoundcard;override:boolean):Integer;
+
+Const No_Soundcard  = -1;
+      Invalid_SDI   = -2;
+      No_Memory     = -3;
+      MCP_InitError = -4;
+      AMP_InitError = -5;
+
+implementation
+uses AMP,SDI__SB,SDI__SB16,SDI__PAS,SDI__ARIA,DET_SB,DET_PAS,DET_ARIA,DETGUS,
+     TIMESERV,CSupport,GUS,mixer,vds
+{$IFDEF DPMI}
+,dpmiAPI
+{$ENDIF};
+
+Function initDSMI(rate,buffer,options:longint;scard:PSoundcard;override:boolean):Integer;
+var a,vdsok: Integer;
+    s: Word;
+    sdi: TSDI_Init;
+    temp: Pointer;
+    mcpstrc: TMCPStruct;
+    dds: tdds;
+begin
+  a:=0;
+  if (not override) then
+   begin
+    fillchar(scard^,sizeof(scard^),0);
+    a:=detectGUS(scard);
+    if a<>0 then a:=detectPAS(scard);
+    if a<>0 then a:=detectSB16(scard);
+    if a<>0 then a:=detectAria(scard);
+    if a<>0 then a:=detectSBPro(scard);
+    if a<>0 then a:=detectSB(scard);
+   end;
+  if a=0 then
+   begin
+    case scard^.ID of
+         ID_SB: sdi:=SDI_SB;
+      ID_SBPro: sdi:=SDI_SBpro;
+       ID_SB16: begin
+                 sdi:=SDI_SB16;
+                 if options and MCP_Mono>0 then scard^.stereo:=false;
+                end;
+       ID_ARIA: begin
+                 sdi:=SDI_ARIA;
+                 if options and MCP_Mono>0 then scard^.stereo:=false;
+                end;
+      ID_PAS,ID_PASplus,ID_PAS16 :
+                begin
+                 sdi:=SDI_PAS;
+                 if options and MCP_Mono>0 then scard^.stereo:=false;
+                end;
+       ID_GUS:;
+     else
+      begin
+       initDSMI:=Invalid_SDI;
+       exit;
+      end
+    end;
+    if scard^.id<>ID_GUS then
+     begin
+      if mcpInitSoundDevice(sdi,scard)<>0 then
+       begin
+        initdsmi:=invalid_sdi;
+        exit;
+       end;
+     end;
+   end
+  else
+   begin
+    initDSMI:=No_Soundcard;
+    exit;
+   end;
+  if scard^.ID=ID_SBPRO then
+   begin
+    mixerInit(MIXER_SBPRO,scard^.ioPort);
+    mixerSet(MIX_FILTEROUT,0);
+   end;
+  if scard^.id<>ID_GUS then
+   begin
+{$IFNDEF DPMI}
+    vdsOK:=byte(vdsInit=0);
+{$ENDIF}
+    mcpstrc.options:=0;
+    s:=buffer*2+MCP_Tablesize+16;
+    if options and MCP_Quality>0 then
+     begin
+      mcpstrc.options:=mcpstrc.options or MCP_Quality;
+      inc(s,MCP_Qualitysize);
+     end;
+{$IFDEF DPMI}
+    temp:=ptr(dseg,0);
+    dpmiAllocDOS(s div 16,word(a),mcpstrc.bufferSeg);
+{$ELSE}
+    temp:=malloc(s);
+{$ENDIF}
+    if temp=nil then
+     begin
+      initDSMI:=No_Memory;
+      exit;
+     end;
+    with mcpstrc do
+     begin
+{$IFDEF DPMI}
+      bufferLinear:=dpmiGetLinearAddr(bufferSeg);
+{$ELSE}
+      bufferSeg:=seg(temp^)+ofs(temp^) div 16+1;
+      if (vdsOK>0) and (scard^.id<>ID_DAC) then
+       begin
+        dds.size:=buffer;
+        dds.segment:=bufferSeg;
+        dds.offset:=0;
+        if vdsLockDMA(@dds)=0 then
+         begin
+          bufferLinear:=dds.address;
+          vdsDisableDMATranslation(scard^.dmaChannel);
+          vdsOK:=2;
+         end
+        else bufferLinear:=longint(bufferSeg) shl 4;
+       end else bufferLinear:=longint(bufferSeg) shl 4;
+{$ENDIF}
+      bufferSize:=buffer*2;
+      reqSize:=buffer;
+      samplingRate:=rate;
+     end;
+    if mcpInit(@mcpstrc)<>0 then
+     begin
+      initDSMI:=MCP_Initerror;
+      exit;
+     end;
+    atexit(@mcpClose);
+    cdiInit;
+    cdiRegister(@CDI_MCP,0,31);
+  end else
+   begin
+    gusInit(scard);
+    atexit(@gusClose);
+    gushminit;
+    cdiInit;
+    cdiRegister(@CDI_GUS,0,31);
+   end;
+  tsInit;
+  atexit(@tsClose);
+  if ampInit(0)<>0 then
+   begin
+    initDSMI:=AMP_Initerror;
+    exit;
+   end;
+  atexit(@ampClose);
+  tsAddRoutine(@ampInterrupt,AMP_Timer);
+  initDSMI:=0;
+end;
+
+begin
+end.

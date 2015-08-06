@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\2.6.2\bin\i386-win32\fpc.exe" Date="1114730022"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -vewnhi -FiC:\ironseed\dmp -FiC:\ironseed\code\lib\i386-win32 -FuC:\ironseed\code -FuC:\ironseed\dmp -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\packager\units\i386-win32 -FUC:\ironseed\code\lib\i386-win32\ -l -oproject1.exe -dLCL -dLCLwin32 intro.pas"/>
+  <Complete Value="False"/>
+</CONFIG>

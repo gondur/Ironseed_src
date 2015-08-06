@@ -1,0 +1,126 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00686H 00687H generatecargodata  CODE
+ 00690H 00C5DH 005CEH Crt                CODE
+ 00C60H 01A1AH 00DBBH System             CODE
+ 01A20H 01E85H 00466H DATA               DATA
+ 01E90H 05E8FH 04000H STACK              STACK
+ 05E90H 05E90H 00000H HEAP               HEAP
+
+  Address         Publics by Value
+
+ 0000:0000       getworth
+ 0000:022D       getlist
+ 0000:04FB       @
+ 0069:000D       @
+ 0069:0152       TextMode
+ 0069:0167       Window
+ 0069:01A7       ClrScr
+ 0069:01C1       ClrEol
+ 0069:01D5       InsLine
+ 0069:01DA       DelLine
+ 0069:01FA       GotoXY
+ 0069:0226       WhereX
+ 0069:0232       WhereY
+ 0069:023E       TextColor
+ 0069:0258       TextBackground
+ 0069:0270       LowVideo
+ 0069:0276       HighVideo
+ 0069:027C       NormVideo
+ 0069:0283       Sound
+ 0069:02B0       NoSound
+ 0069:02B7       KeyPressed
+ 0069:02C9       ReadKey
+ 0069:02EB       AssignCrt
+ 01A2:0002       OvrCodeList
+ 01A2:0004       OvrHeapSize
+ 01A2:0006       OvrDebugPtr
+ 01A2:000A       OvrHeapOrg
+ 01A2:000C       OvrHeapPtr
+ 01A2:000E       OvrHeapEnd
+ 01A2:0010       OvrLoadList
+ 01A2:0012       OvrDosHandle
+ 01A2:0014       OvrEmsHandle
+ 01A2:0016       HeapOrg
+ 01A2:001A       HeapPtr
+ 01A2:001E       HeapEnd
+ 01A2:0022       FreeList
+ 01A2:0026       FreeZero
+ 01A2:002A       HeapError
+ 01A2:002E       ExitProc
+ 01A2:0032       ExitCode
+ 01A2:0034       ErrorAddr
+ 01A2:0038       PrefixSeg
+ 01A2:003A       StackLimit
+ 01A2:003C       InOutRes
+ 01A2:003E       RandSeed
+ 01A2:0042       SelectorInc
+ 01A2:0044       Seg0040
+ 01A2:0046       SegA000
+ 01A2:0048       SegB000
+ 01A2:004A       SegB800
+ 01A2:004C       Test8086
+ 01A2:004D       Test8087
+ 01A2:004E       FileMode
+ 01A2:0052       f
+ 01A2:00D2       create
+ 01A2:00F6       ft
+ 01A2:01F6       index
+ 01A2:01F8       j
+ 01A2:01FA       total
+ 01A2:01FC       c
+ 01A2:01FE       ca
+ 01A2:0202       cr
+ 01A2:0206       CheckBreak
+ 01A2:0207       CheckEOF
+ 01A2:0208       DirectVideo
+ 01A2:0209       CheckSnow
+ 01A2:020A       LastMode
+ 01A2:020C       TextAttr
+ 01A2:020E       WindMin
+ 01A2:0210       WindMax
+ 01A2:0218       Input
+ 01A2:0318       Output
+ 01A2:0418       SaveInt00
+ 01A2:041C       SaveInt02
+ 01A2:0420       SaveInt1B
+ 01A2:0424       SaveInt21
+ 01A2:0428       SaveInt23
+ 01A2:042C       SaveInt24
+ 01A2:0430       SaveInt34
+ 01A2:0434       SaveInt35
+ 01A2:0438       SaveInt36
+ 01A2:043C       SaveInt37
+ 01A2:0440       SaveInt38
+ 01A2:0444       SaveInt39
+ 01A2:0448       SaveInt3A
+ 01A2:044C       SaveInt3B
+ 01A2:0450       SaveInt3C
+ 01A2:0454       SaveInt3D
+ 01A2:0458       SaveInt3E
+ 01A2:045C       SaveInt3F
+ 01A2:0460       SaveInt75
+
+Line numbers for generatecargodata(MAKEDATA\CREAMAKE.PAS) segment generatecargodata
+
+    35 0000:0000    36 0000:0004    37 0000:0009    38 0000:000E
+    39 0000:0011    40 0000:001E    41 0000:002B    42 0000:0037
+    43 0000:0048    44 0000:005E    45 0000:0074    46 0000:008A
+    47 0000:00A0    49 0000:00B4    51 0000:00BA    52 0000:00D2
+    53 0000:00DC    54 0000:00FC    56 0000:0122    57 0000:0128
+    64 0000:022D    65 0000:0231    66 0000:0240    67 0000:024F
+    68 0000:025E    69 0000:0270    70 0000:0288    71 0000:0297
+    72 0000:02A7    73 0000:02BA    74 0000:02D3    75 0000:02E3
+    76 0000:02F3    77 0000:0303    78 0000:031F    79 0000:033B
+    85 0000:0347    86 0000:0378    88 0000:0384    89 0000:038A
+    90 0000:03C4    91 0000:03F5    92 0000:03FC    93 0000:0412
+    94 0000:0439    95 0000:0445    96 0000:0487    97 0000:0497
+    99 0000:04A1   100 0000:04B1   101 0000:04C1   102 0000:04D1
+   104 0000:04FB   105 0000:0508   106 0000:0517   107 0000:0528
+   108 0000:0537   109 0000:0546   111 0000:054B   112 0000:054F
+   113 0000:0566   114 0000:0590   115 0000:05AB   116 0000:05DC
+   117 0000:060B   118 0000:0626   119 0000:063D   120 0000:0654
+   121 0000:065E   122 0000:066D   124 0000:067C   125 0000:067F
+
+Program entry point at 0000:04FB

@@ -1,0 +1,35 @@
+program detectsoundinformation;
+
+uses strings,crt,MCP,DET_SB,DET_PAS,DET_ARIA,DETGUS;
+
+var
+ scard: TSoundCard;
+
+
+procedure detectcardinfo(scard: PSoundCard);
+var
+ a: integer;
+begin
+ a:=0;
+ fillchar(scard^,sizeof(scard^),0);
+ a:=detectGUS(scard);
+ if a<>0 then a:=detectPAS(scard);
+ if a<>0 then a:=detectSB16(scard);
+ if a<>0 then a:=detectAria(scard);
+ if a<>0 then a:=detectSBPro(scard);
+ if a<>0 then a:=detectSB(scard);
+end;
+
+procedure displaydata;
+begin
+ writeln(#13#10'Sound Card : ',strpas(scard.name));
+ writeln('Port       : ',scard.ioport);
+ writeln('IRQ        : ',scard.dmairq);
+ writeln('DMA Channel: ',scard.dmachannel);
+ writeln('Mix Rate   : ',scard.maxrate);
+end;
+
+begin
+ detectcardinfo(@scard);
+ displaydata;
+end.

@@ -1,0 +1,8 @@
+unit version;
+
+interface
+const
+     versionstring='v1.20.0001';
+implementation
+begin
+end.

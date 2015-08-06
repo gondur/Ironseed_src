@@ -1,0 +1,81 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 001E7H 001E8H getiteminfostuff   CODE
+ 001F0H 00D47H 00B58H System             CODE
+ 00D50H 011E9H 0049AH DATA               DATA
+ 011F0H 051EFH 04000H STACK              STACK
+ 051F0H 051F0H 00000H HEAP               HEAP
+
+  Address         Publics by Value
+
+ 0000:0028       @
+ 00D5:0002       OvrCodeList
+ 00D5:0004       OvrHeapSize
+ 00D5:0006       OvrDebugPtr
+ 00D5:000A       OvrHeapOrg
+ 00D5:000C       OvrHeapPtr
+ 00D5:000E       OvrHeapEnd
+ 00D5:0010       OvrLoadList
+ 00D5:0012       OvrDosHandle
+ 00D5:0014       OvrEmsHandle
+ 00D5:0016       HeapOrg
+ 00D5:001A       HeapPtr
+ 00D5:001E       HeapEnd
+ 00D5:0022       FreeList
+ 00D5:0026       FreeZero
+ 00D5:002A       HeapError
+ 00D5:002E       ExitProc
+ 00D5:0032       ExitCode
+ 00D5:0034       ErrorAddr
+ 00D5:0038       PrefixSeg
+ 00D5:003A       StackLimit
+ 00D5:003C       InOutRes
+ 00D5:003E       RandSeed
+ 00D5:0042       SelectorInc
+ 00D5:0044       Seg0040
+ 00D5:0046       SegA000
+ 00D5:0048       SegB000
+ 00D5:004A       SegB800
+ 00D5:004C       Test8086
+ 00D5:004D       Test8087
+ 00D5:004E       FileMode
+ 00D5:0052       iteminfo
+ 00D5:00C8       f
+ 00D5:0148       ft
+ 00D5:0248       i
+ 00D5:024A       j
+ 00D5:024C       count
+ 00D5:024E       Input
+ 00D5:034E       Output
+ 00D5:044E       SaveInt00
+ 00D5:0452       SaveInt02
+ 00D5:0456       SaveInt1B
+ 00D5:045A       SaveInt21
+ 00D5:045E       SaveInt23
+ 00D5:0462       SaveInt24
+ 00D5:0466       SaveInt34
+ 00D5:046A       SaveInt35
+ 00D5:046E       SaveInt36
+ 00D5:0472       SaveInt37
+ 00D5:0476       SaveInt38
+ 00D5:047A       SaveInt39
+ 00D5:047E       SaveInt3A
+ 00D5:0482       SaveInt3B
+ 00D5:0486       SaveInt3C
+ 00D5:048A       SaveInt3D
+ 00D5:048E       SaveInt3E
+ 00D5:0492       SaveInt3F
+ 00D5:0496       SaveInt75
+
+Line numbers for getiteminfostuff(MAKEDATA\ITEMMAKE.PAS) segment getiteminfostuff
+
+    15 0000:0028    16 0000:0030    17 0000:003F    18 0000:004E
+    19 0000:005D    20 0000:006E    21 0000:0085    23 0000:008A
+    25 0000:0095    26 0000:00B6    27 0000:00C2    28 0000:00DC
+    29 0000:00F2    30 0000:00FC    31 0000:0103    32 0000:0107
+    36 0000:0139    37 0000:016C    38 0000:017B    39 0000:0192
+    40 0000:01A9    41 0000:01B8    42 0000:01C2    43 0000:01D1
+    44 0000:01E0
+
+Program entry point at 0000:0028

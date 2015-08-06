@@ -1,0 +1,73 @@
+UNCOMPLETE ALPHA (0.5)
+QUAI PA'LOI
+PAI ALOI DURING THE WAR
+
+-1      -1      1       1       HI HELLO GREETINGS HYA HIYA SALUTATIONS WELCOME
+-1      20000   1       2       BYE GOOD-BYE GOODBYE OVER OUT 10-4 QUIT
+-1      -1      1       3       HELP
+-1      -1      1       5       VOID DWELLERS
+-1      -1      1       5       D'PAHK WORMS
+-1      -1      1       5       SENGZHAC BUGS BUGGERS
+-1      -1      1       5       GUILD
+-1      -1      1       5       PHAEDOR MOCH PUPPET
+-1      -1      1       5       ERMIGEN
+-1      -1      1       11      QUAI PA'LOI
+-1      -1      1       12      PAI ALOI
+-1      -1      1       13      Q'OOUL
+-1      -1      1       5       ICON
+-1      -1      1       5       TITERIAN
+-1      -1      1       5       YLINTHLIXYMN YILLER
+-1      -1      1       5       SCAVENGERS SCAVS
+-1      -1      1       5       AARD
+-1      -1      1       5       MALZATOIR
+-1      -1      1       5       **** NAMELESS
+-1      -1      1       5       TROJAN GATE GATES
+-1      -1      1       5       MONKS MONK
+-1      -1      1       5       HOMEWORLD HOME WORLD
+-1      -1      1       26      SELL BUY TRADE TRADERS
+-1      -1      1       5       HALLIFAX MANUEVER
+-1      -1      1       5       NOVA
+-1      -1      1       5       SHUNT
+-1      -1      1       5       PHASE
+-1      -1      1       5       GOD'S EYE
+-1      -1      1       14      IRONSEED
+-1      -1      1       5       THERMOPLAST
+-1      -1      1       5       CARGAN
+-1      -1      1       5       MOBEUS
+-1      -1      1       5       KENDAR
+
+-500
+
+GENERIC RESPONSE
+0       WHAT?
+
+HI
+1       HELLO, THERE IS A WAR ON, WE DON'T HAVE MUCH TIME TO TALK.
+
+BYE
+2       YES, LEAVE US ALONE, WE ARE BUSY.
+
+HELP
+3       WE NEED EVERYTHING FOR OURSELVES.  WE DON'T HAVE ANYTHING TO SPARE.
+
+MOST RACES
+5       WE DON'T HAVE TIME FOR GOSSIP, THERE IS A WAR GOING ON.
+
+QUAI PA'LOI
+11      WE HAVE FINALLY GAINED POWER.  NOW WE WILL BE ABLE TO SET STRAIGHT THE WRONGS OF THE Q'OOUL.
+
+PAI ALOI
+12      WE ARE NOW IN CHARGE HERE.
+
+Q'OOUL
+13      THEY HAVE RUN FROM US.  THEY ARE HIDING SOMEWHERE NEAR HERE.  IT IS ONLY A MATTER OF TIME BEFORE WE FIND THEM AND DESTROY THEM COMPLETELY.
+
+IRONSEED
+14      THAT IS THE NAME OF OUR OPERATION TO PROTECT OUR RESOURCES.  WE CANNOT TELL YOU ANY MORE THAN THAT.
+
+TRADE
+26      WE WILL NOT TRADE WITH OUTSIDERS.  OUR RESOURCES ARE TOO VALUEABLE.
+
+
+
+-500
